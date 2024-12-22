@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* RNUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNUITests.m */; };
+		0BB6125E508698E62E44C88D /* libPods-RNUI-RNUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D8B463014A5BF7548D3897 /* libPods-RNUI-RNUITests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2A8D677A8260B6D3B1B1F6B0 /* libPods-RNUI-RNUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C93D2571CD6B34F3F83523FB /* libPods-RNUI-RNUITests.a */; };
 		68F4DD05216085FE335535D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		CBA4FF5D1201F871F5CD85C3 /* libPods-RNUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A583DDAC2B46B3BFBC468E /* libPods-RNUI.a */; };
+		AC464CC4343DC5F8EB385D7F /* libPods-RNUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3826A38936AABF8EB358840D /* libPods-RNUI.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +38,13 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RNUI/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RNUI/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = RNUI/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		15B58217A98CB77D1555D126 /* Pods-RNUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI.debug.xcconfig"; path = "Target Support Files/Pods-RNUI/Pods-RNUI.debug.xcconfig"; sourceTree = "<group>"; };
-		43A583DDAC2B46B3BFBC468E /* libPods-RNUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CCEE882C3BB79480418C15A /* Pods-RNUI-RNUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI-RNUITests.debug.xcconfig"; path = "Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		15D8B463014A5BF7548D3897 /* libPods-RNUI-RNUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNUI-RNUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3826A38936AABF8EB358840D /* libPods-RNUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B68A5E933C276E0FB1BC868 /* Pods-RNUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI.release.xcconfig"; path = "Target Support Files/Pods-RNUI/Pods-RNUI.release.xcconfig"; sourceTree = "<group>"; };
+		5DB2B622A60BAA11C1D9E05C /* Pods-RNUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI.debug.xcconfig"; path = "Target Support Files/Pods-RNUI/Pods-RNUI.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNUI/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C32FF09FF5BAD0A2A993B967 /* Pods-RNUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI.release.xcconfig"; path = "Target Support Files/Pods-RNUI/Pods-RNUI.release.xcconfig"; sourceTree = "<group>"; };
-		C93D2571CD6B34F3F83523FB /* libPods-RNUI-RNUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNUI-RNUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E467A4957A52CB001C878418 /* Pods-RNUI-RNUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI-RNUITests.release.xcconfig"; path = "Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D674579E668F0D9320FA75E4 /* Pods-RNUI-RNUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI-RNUITests.debug.xcconfig"; path = "Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D6D2525572CB5ED050DE7981 /* Pods-RNUI-RNUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI-RNUITests.release.xcconfig"; path = "Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A8D677A8260B6D3B1B1F6B0 /* libPods-RNUI-RNUITests.a in Frameworks */,
+				0BB6125E508698E62E44C88D /* libPods-RNUI-RNUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBA4FF5D1201F871F5CD85C3 /* libPods-RNUI.a in Frameworks */,
+				AC464CC4343DC5F8EB385D7F /* libPods-RNUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				43A583DDAC2B46B3BFBC468E /* libPods-RNUI.a */,
-				C93D2571CD6B34F3F83523FB /* libPods-RNUI-RNUITests.a */,
+				3826A38936AABF8EB358840D /* libPods-RNUI.a */,
+				15D8B463014A5BF7548D3897 /* libPods-RNUI-RNUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -143,10 +143,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				15B58217A98CB77D1555D126 /* Pods-RNUI.debug.xcconfig */,
-				C32FF09FF5BAD0A2A993B967 /* Pods-RNUI.release.xcconfig */,
-				6CCEE882C3BB79480418C15A /* Pods-RNUI-RNUITests.debug.xcconfig */,
-				E467A4957A52CB001C878418 /* Pods-RNUI-RNUITests.release.xcconfig */,
+				5DB2B622A60BAA11C1D9E05C /* Pods-RNUI.debug.xcconfig */,
+				5B68A5E933C276E0FB1BC868 /* Pods-RNUI.release.xcconfig */,
+				D674579E668F0D9320FA75E4 /* Pods-RNUI-RNUITests.debug.xcconfig */,
+				D6D2525572CB5ED050DE7981 /* Pods-RNUI-RNUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -158,12 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RNUITests" */;
 			buildPhases = (
-				202DF65027D4DA8B4633F479 /* [CP] Check Pods Manifest.lock */,
+				BE1CE995F2016DF275721617 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				325D670A136156B6BB9C99D6 /* [CP] Embed Pods Frameworks */,
-				9725B41857464697E81DA582 /* [CP] Copy Pods Resources */,
+				6A31EB9DB7DBEDE4601A57A9 /* [CP] Embed Pods Frameworks */,
+				4A28173BDCCB44A62D51A1FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,13 +179,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RNUI" */;
 			buildPhases = (
-				15A02E97B7B05BA54E66DCAA /* [CP] Check Pods Manifest.lock */,
+				FDCC1FBF409AFD4091FA7B85 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				D273CEDB4FA5F473D79D3AA2 /* [CP] Embed Pods Frameworks */,
-				37E7B74866DD35393A5E6309 /* [CP] Copy Pods Resources */,
+				64A7D72F56EF7EF506C436EE /* [CP] Embed Pods Frameworks */,
+				4612107745A9A96C1555C2FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,29 +269,75 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		15A02E97B7B05BA54E66DCAA /* [CP] Check Pods Manifest.lock */ = {
+		4612107745A9A96C1555C2FD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNUI-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		202DF65027D4DA8B4633F479 /* [CP] Check Pods Manifest.lock */ = {
+		4A28173BDCCB44A62D51A1FA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64A7D72F56EF7EF506C436EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A31EB9DB7DBEDE4601A57A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE1CE995F2016DF275721617 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -313,72 +359,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		325D670A136156B6BB9C99D6 /* [CP] Embed Pods Frameworks */ = {
+		FDCC1FBF409AFD4091FA7B85 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNUI-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		37E7B74866DD35393A5E6309 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9725B41857464697E81DA582 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D273CEDB4FA5F473D79D3AA2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -414,7 +414,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CCEE882C3BB79480418C15A /* Pods-RNUI-RNUITests.debug.xcconfig */;
+			baseConfigurationReference = D674579E668F0D9320FA75E4 /* Pods-RNUI-RNUITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -441,7 +441,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E467A4957A52CB001C878418 /* Pods-RNUI-RNUITests.release.xcconfig */;
+			baseConfigurationReference = D6D2525572CB5ED050DE7981 /* Pods-RNUI-RNUITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -465,7 +465,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15B58217A98CB77D1555D126 /* Pods-RNUI.debug.xcconfig */;
+			baseConfigurationReference = 5DB2B622A60BAA11C1D9E05C /* Pods-RNUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -493,7 +493,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C32FF09FF5BAD0A2A993B967 /* Pods-RNUI.release.xcconfig */;
+			baseConfigurationReference = 5B68A5E933C276E0FB1BC868 /* Pods-RNUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
