@@ -2,19 +2,19 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React, { memo } from 'react'
 
 const ItemView = ({
-    item,
+    data,
     navigation
 }) => {
     return (
         <TouchableOpacity
             style={styles.Container}
-            onPress={() => { navigation.navigate(item?.screen) }}
+            onPress={() => { navigation.navigate(data?.screen) }}
         >
             <Text
                 style={styles.TextStyle}
                 numberOfLines={1}
             >
-                {item?.title}
+                {data?.title}
             </Text>
         </TouchableOpacity>
     )

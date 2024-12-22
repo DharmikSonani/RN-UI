@@ -2,8 +2,8 @@ import { FlatList, Text, } from 'react-native'
 import React from 'react'
 import useScreenHooks from './MainScreen.Hook'
 import { styles } from './styles'
-import ItemView from './component/ItemView'
 import data from './screenhelper'
+import ItemView from '../../components/ItemView'
 
 const MainScreen = (props) => {
 
@@ -17,7 +17,7 @@ const MainScreen = (props) => {
             showsVerticalScrollIndicator={false}
             renderItem={({ item }) =>
                 <ItemView
-                    item={item}
+                    data={item}
                     navigation={navigation}
                 />
             }
