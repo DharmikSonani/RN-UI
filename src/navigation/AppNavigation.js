@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Screens } from './helper';
 import MainScreen from '../screens/MainScreen/MainScreen';
 import SlideImageScreen from '../screens/SlideImageScreen/SlideImageScreen';
+import Image3DFlipScreen from '../screens/Image3DFlipScreen/Image3DFlipScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.SlideImageScreen}
                 component={SlideImageScreen}
+            />
+            <Stack.Screen
+                name={Screens.Image3DFlipScreen}
+                component={Image3DFlipScreen}
             />
         </Stack.Navigator>
     )

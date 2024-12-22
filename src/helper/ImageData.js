@@ -11,3 +11,30 @@ export const NatureImageList = [
     'https://images.pexels.com/photos/1624503/pexels-photo-1624503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     'https://images.pexels.com/photos/1699030/pexels-photo-1699030.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
 ]
+
+export const Marvel3DList = [
+    {
+        background: 'https://e1.pxfuel.com/desktop-wallpaper/243/480/desktop-wallpaper-avengers-end-game-final-battle-ultra-backgrounds-for-u-tv-avengers-endgame-battlefield.jpg',
+        forground: require('../assets/images/marvel/IronMan.png'),
+    },
+    {
+        background: 'https://t4.ftcdn.net/jpg/04/15/75/37/360_F_415753793_Amq32dxFXnCvub1rJ3UbCYjyzV7CdAce.jpg',
+        forground: require('../assets/images/marvel/Thor.png'),
+    },
+    {
+        background: 'https://www.itl.cat/pngfile/big/44-441041_download-captain-america-the-winter-soldier-background.jpg',
+        forground: require('../assets/images/marvel/Captain.png'),
+    },
+    {
+        background: 'https://i.pinimg.com/originals/55/66/83/5566830ac8035956b4f4d29ae8cb70cf.jpg',
+        forground: require('../assets/images/marvel/DoctorStrainge.png'),
+    },
+    {
+        background: 'https://i.pinimg.com/474x/9e/2e/b6/9e2eb690049d6da61cabc776bb6f8ae0.jpg',
+        forground: require('../assets/images/marvel/Groot.png'),
+    },
+    {
+        background: 'https://e1.pxfuel.com/desktop-wallpaper/243/480/desktop-wallpaper-avengers-end-game-final-battle-ultra-backgrounds-for-u-tv-avengers-endgame-battlefield.jpg',
+        forground: require('../assets/images/marvel/Thanos.png'),
+    },
+]

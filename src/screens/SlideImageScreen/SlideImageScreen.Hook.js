@@ -8,7 +8,6 @@ const width = Dimensions.get("window").width;
 const useScreenHooks = (props) => {
 
     // variables
-    const navigation = props.navigation;
     const _scrollView = useRef();
     const isFocused = useIsFocused();
 
@@ -17,7 +16,9 @@ const useScreenHooks = (props) => {
 
     // useEffects
     useEffect(() => {
-        _scrollView.current.scrollTo({ x: NatureImageList.length * width, animated: false })
+        setTimeout(() => {
+            _scrollView.current.scrollTo({ x: NatureImageList.length * width, animated: false })
+        }, 1);
     }, [])
 
     // methods

@@ -9,6 +9,10 @@ const data = [
         title: '3 Slide Image Flatlist',
         screen: Screens.SlideImageScreen,
     },
+    {
+        title: '3D Image Flip',
+        screen: Screens.Image3DFlipScreen,
+    },
 ]
 
 data.sort((a, b) => {
