@@ -1,5 +1,5 @@
 import { Animated, Platform, StyleSheet, TouchableOpacity, } from 'react-native'
-import React, { useRef, useState } from 'react'
+import React, { memo, useRef, useState } from 'react'
 
 const Image3DFlipCard = ({
     background,
@@ -93,7 +93,7 @@ const Image3DFlipCard = ({
     )
 }
 
-export default Image3DFlipCard
+export default memo(Image3DFlipCard)
 
 const styles = StyleSheet.create({
     Container: {
