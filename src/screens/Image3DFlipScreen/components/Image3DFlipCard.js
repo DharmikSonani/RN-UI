@@ -31,6 +31,7 @@ const Image3DFlipCard = ({
             <Animated.Image
                 source={background}
                 style={[styles.BackImage,
+                { borderRadius: height * 0.025 },
                 Platform.OS == 'ios' ? {
                     transform: [
                         { perspective: height ?? 1 },
@@ -106,14 +107,12 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         alignItems: 'center',
-        borderRadius: 7,
         position: 'absolute',
     },
     BackImage: {
         width: '100%',
         height: '100%',
         resizeMode: 'cover',
-        borderRadius: 7,
         zIndex: -1,
     },
     ForImage: {
