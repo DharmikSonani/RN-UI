@@ -5,6 +5,10 @@ const data = [
     //     title: '',
     //     screen: Screens.MainScreen,
     // },
+    {
+        title: '3 Slide Image Flatlist',
+        screen: Screens.SlideImageScreen,
+    },
 ]
 
 data.sort((a, b) => {
