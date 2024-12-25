@@ -1,5 +1,5 @@
 import { Animated, Dimensions, StyleSheet, TouchableOpacity, View } from 'react-native'
-import React, { useRef, useState } from 'react'
+import React, { memo, useRef, useState } from 'react'
 import FastImage from 'react-native-fast-image';
 
 const width = Dimensions.get('window').width;
@@ -94,7 +94,7 @@ const Card3D = ({
     )
 }
 
-export default Card3D
+export default memo(Card3D)
 
 const styles = StyleSheet.create({
     Container: {
