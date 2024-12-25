@@ -4,6 +4,7 @@ import { Screens } from './helper';
 import MainScreen from '../screens/MainScreen/MainScreen';
 import SlideImageScreen from '../screens/SlideImageScreen/SlideImageScreen';
 import Image3DFlipScreen from '../screens/Image3DFlipScreen/Image3DFlipScreen';
+import Card3DScreen from '../screens/Card3DScreen/Card3DScreen';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.Image3DFlipScreen}
                 component={Image3DFlipScreen}
+            />
+            <Stack.Screen
+                name={Screens.Card3DScreen}
+                component={Card3DScreen}
             />
         </Stack.Navigator>
     )

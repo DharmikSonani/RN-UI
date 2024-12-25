@@ -38,3 +38,16 @@ export const Marvel3DList = [
         forground: require('../assets/images/marvel/Thanos.png'),
     },
 ]
+
+export const Card3DImageList = [
+    {
+        background: require('../assets/images/3d-card-images/DarkRiderCover.jpeg'),
+        forground: require('../assets/images/3d-card-images/DarkRiderCharacter.webp'),
+        title: require('../assets/images/3d-card-images/DarkRiderTitle.png'),
+    },
+    {
+        background: require('../assets/images/3d-card-images/ForceMageCover.jpeg'),
+        forground: require('../assets/images/3d-card-images/ForceMageCharacter.webp'),
+        title: require('../assets/images/3d-card-images/ForceMageTitle.png'),
+    },
+]

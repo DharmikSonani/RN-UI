@@ -13,6 +13,10 @@ const data = [
         title: '3D Image Flip',
         screen: Screens.Image3DFlipScreen,
     },
+    {
+        title: '3D Card',
+        screen: Screens.Card3DScreen,
+    },
 ]
 
 data.sort((a, b) => {
