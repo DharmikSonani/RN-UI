@@ -98,9 +98,8 @@ export default Card3D
 
 const styles = StyleSheet.create({
     Container: {
-        width: width * 0.8,
+        width: width,
         aspectRatio: 1 / 1.45,
-        marginHorizontal: width * 0.1,
     },
     Card: {
         width: '100%',
