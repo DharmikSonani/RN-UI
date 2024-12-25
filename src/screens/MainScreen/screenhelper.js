@@ -1,10 +1,6 @@
 import { Screens } from "../../navigation/helper";
 
 const data = [
-    // {
-    //     title: '',
-    //     screen: Screens.MainScreen,
-    // },
     {
         title: '3 Slide Image Flatlist',
         screen: Screens.SlideImageScreen,
@@ -20,6 +16,10 @@ const data = [
     {
         title: 'Analog Clock',
         screen: Screens.AnalogClockScreen,
+    },
+    {
+        title: 'Add To Cart',
+        screen: Screens.AddToCartScreen,
     },
 ]
 
