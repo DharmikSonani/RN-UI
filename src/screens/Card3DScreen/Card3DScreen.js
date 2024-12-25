@@ -17,6 +17,7 @@ const Card3DScreen = (props) => {
             keyExtractor={(item, index) => index}
             horizontal
             pagingEnabled
+            bounces={false}
             showsHorizontalScrollIndicator={false}
             renderItem={({ item }) => {
                 return (
