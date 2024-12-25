@@ -17,6 +17,10 @@ const data = [
         title: '3D Card',
         screen: Screens.Card3DScreen,
     },
+    {
+        title: 'Analog Clock',
+        screen: Screens.AnalogClockScreen,
+    },
 ]
 
 data.sort((a, b) => {
