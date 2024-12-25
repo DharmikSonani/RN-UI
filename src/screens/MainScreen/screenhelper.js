@@ -21,6 +21,10 @@ const data = [
         title: 'Add To Cart',
         screen: Screens.AddToCartScreen,
     },
+    {
+        title: 'Image Slider',
+        screen: Screens.ImageSliderScreen,
+    },
 ]
 
 data.sort((a, b) => {

@@ -5,4 +5,5 @@ export const Screens = {
     Card3DScreen: 'Card 3D Screen',
     AnalogClockScreen: 'Analog Clock Screen',
     AddToCartScreen: 'Add To Cart Screen',
+    ImageSliderScreen: 'Image Slider Screen',
 }
