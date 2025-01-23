@@ -50,7 +50,7 @@ Here is a complete example of how to use the `useDraggableXY` hook in a React Na
 ```javascript
 import React from 'react';
 import { View, Animated, StyleSheet } from 'react-native';
-import { useDraggableXY } from './path-to/draggableXY';
+import { useDraggableXY } from './draggableXY';
 
 const App = () => {
     const { drag, panResponder } = useDraggableXY({
