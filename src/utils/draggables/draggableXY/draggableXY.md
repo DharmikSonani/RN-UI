@@ -1,4 +1,4 @@
-# DraggableXY Hook
+# useDraggableXY Hook
 
 A custom React Native hook (`useDraggableXY`) to create draggable UI components with optional bounce-back effects. This hook allows you to easily implement draggable views within specified boundaries.
 

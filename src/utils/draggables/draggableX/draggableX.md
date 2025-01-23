@@ -1,4 +1,4 @@
-# DraggableX Hook
+# useDraggableX Hook
 
 A custom React Native hook (`useDraggableX`) to create draggable UI components restricted to horizontal movement. This hook allows you to implement smooth dragging functionality within specified boundaries and trigger actions based on drag direction.
 
