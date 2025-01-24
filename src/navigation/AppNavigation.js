@@ -8,6 +8,7 @@ import Card3DScreen from '../screens/Card3DScreen/Card3DScreen';
 import AnalogClockScreen from '../screens/AnalogClockScreen/AnalogClockScreen';
 import AddToCartScreen from '../screens/AddToCartScreen/AddToCartScreen';
 import ImageSliderScreen from '../screens/ImageSliderScreen/ImageSliderScreen';
+import DraggableScreen from '../screens/DraggableScreen/DraggableScreen';
 
 const Stack = createStackNavigator();
 
@@ -45,6 +46,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.ImageSliderScreen}
                 component={ImageSliderScreen}
+            />
+            <Stack.Screen
+                name={Screens.DraggableScreen}
+                component={DraggableScreen}
             />
         </Stack.Navigator>
     )

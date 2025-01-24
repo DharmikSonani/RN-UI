@@ -6,4 +6,5 @@ export const Screens = {
     AnalogClockScreen: 'Analog Clock Screen',
     AddToCartScreen: 'Add To Cart Screen',
     ImageSliderScreen: 'Image Slider Screen',
+    DraggableScreen: 'Draggable Screen',
 }

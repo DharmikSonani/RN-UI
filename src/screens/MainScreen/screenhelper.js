@@ -25,6 +25,10 @@ const data = [
         title: 'Image Slider',
         screen: Screens.ImageSliderScreen,
     },
+    {
+        title: 'Draggable Demo',
+        screen: Screens.DraggableScreen,
+    },
 ]
 
 data.sort((a, b) => {
