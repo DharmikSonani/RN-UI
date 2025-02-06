@@ -16,7 +16,7 @@ export const useDraggableX = ({
 
     const panResponder = PanResponder.create({
         onMoveShouldSetPanResponder: (_, gestureState) => {
-            return Math.abs(gestureState.dx) > 5 || Math.abs(gestureState.dy) > 5;
+            return Math.abs(gestureState.dx) > 5 || Math.abs(gestureState.dy) > 5; // This line allows you to call child onPress method
         },
         onPanResponderGrant: () => {
             initialPosition.current = drag._value;

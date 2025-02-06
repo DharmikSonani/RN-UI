@@ -17,7 +17,7 @@ export const useDraggableXY = ({
 
     const panResponder = PanResponder.create({
         onMoveShouldSetPanResponder: (_, gestureState) => {
-            return Math.abs(gestureState.dx) > 5 || Math.abs(gestureState.dy) > 5;
+            return Math.abs(gestureState.dx) > 5 || Math.abs(gestureState.dy) > 5; // This line allows you to call child onPress method
         },
         onPanResponderGrant: () => {
             initialPositionX.current = drag.x._value;
@@ -26,10 +26,8 @@ export const useDraggableXY = ({
         onPanResponderMove: (_, { dx, dy }) => {
             const newPositionX = initialPositionX.current + dx;
             const newPositionY = initialPositionY.current + dy;
-            newPositionX >= 0 &&
-                newPositionX <= draggableMaxAreaX &&
-                newPositionY >= 0 &&
-                newPositionY <= draggableMaxAreaY &&
+            ((newPositionX >= 0 && newPositionX <= draggableMaxAreaX) || bounceHorizontal) &&
+                ((newPositionY >= 0 && newPositionY <= draggableMaxAreaY) || bounceVertical) &&
                 drag.setValue({ x: newPositionX, y: newPositionY });
         },
         onPanResponderRelease: (_, { dx, dy }) => {
