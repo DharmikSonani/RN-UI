@@ -4,7 +4,6 @@ import { Animated, PanResponder } from "react-native";
 const defaultDuration = 250;
 
 export const useDraggableX = ({
-    disabled,
     defaultDrag = 0,
     draggableMaxArea = 0,
     duration,
@@ -16,7 +15,9 @@ export const useDraggableX = ({
     const initialPosition = useRef(0);
 
     const panResponder = PanResponder.create({
-        onMoveShouldSetPanResponder: () => !disabled,
+        onMoveShouldSetPanResponder: (_, gestureState) => {
+            return Math.abs(gestureState.dx) > 5 || Math.abs(gestureState.dy) > 5;
+        },
         onPanResponderGrant: () => {
             initialPosition.current = drag._value;
         },
