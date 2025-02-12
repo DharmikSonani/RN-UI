@@ -33,6 +33,10 @@ const data = [
         title: 'Shape Image',
         screen: Screens.ShapeImageScreen,
     },
+    {
+        title: 'Toggle Button',
+        screen: Screens.ToggleButtonScreen,
+    },
 ]
 
 data.sort((a, b) => {

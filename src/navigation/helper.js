@@ -11,4 +11,5 @@ export const Screens = {
     ImageSlider3Screen: 'Image Slider 3 Screen',
     DraggableScreen: 'Draggable Screen',
     ShapeImageScreen: 'Shape Image Screen',
+    ToggleButtonScreen: 'Toggle Button Screen',
 }
