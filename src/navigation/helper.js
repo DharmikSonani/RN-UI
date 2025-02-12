@@ -9,4 +9,5 @@ export const Screens = {
     ImageSlider1Screen: 'Image Slider 1 Screen',
     ImageSlider2Screen: 'Image Slider 2 Screen',
     DraggableScreen: 'Draggable Screen',
+    ShapeImageScreen: 'Shape Image Screen',
 }
