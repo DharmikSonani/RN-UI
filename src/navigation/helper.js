@@ -13,4 +13,6 @@ export const Screens = {
     ShapeImageScreen: 'Shape Image Screen',
     ToggleButtonScreen: 'Toggle Button Screen',
     StoryScreen: 'Story Screen',
+    ImageCarouselScreen: 'Image Carousel Screen',
+    ImageCarousel1Screen: 'Image Carousel 1 Screen',
 }

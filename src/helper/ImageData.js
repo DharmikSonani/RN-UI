@@ -64,3 +64,46 @@ export const ImageSliderList = [
     'https://images.unsplash.com/photo-1564000689425-2f3898b441ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NzEwfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=900&q=60',
     'https://images.unsplash.com/photo-1537616930345-1d330ad3e0a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
 ]
+
+export const MarvelImageList = [
+    {
+        img: "https://w0.peakpx.com/wallpaper/993/891/HD-wallpaper-i-am-ironman-avengers-hero-iron-ironman-man-marvel-movie-suoer-hero.jpg",
+        name: "Iron Man",
+    },
+    {
+        img: "https://w0.peakpx.com/wallpaper/287/473/HD-wallpaper-captain-america-mqvel.jpg",
+        name: "Captain America",
+    },
+    {
+        img: "https://w0.peakpx.com/wallpaper/889/456/HD-wallpaper-thor-avengers-avengers-endgame-stormbreaker.jpg",
+        name: "Thor",
+    },
+    {
+        img: "https://w0.peakpx.com/wallpaper/683/985/HD-wallpaper-wanda-maximoff-marvel-avengers-comics-elizabeth-olsen-wandavision-mcu.jpg",
+        name: "Wanda",
+    },
+    {
+        img: "https://w0.peakpx.com/wallpaper/15/629/HD-wallpaper-thena-eternals-marvel.jpg",
+        name: "Thena",
+    },
+    {
+        img: "https://w0.peakpx.com/wallpaper/669/678/HD-wallpaper-captain-marvel-avengers-endgame.jpg",
+        name: "Captain Marvel",
+    },
+    {
+        img: "https://w0.peakpx.com/wallpaper/1016/766/HD-wallpaper-black-widow-black-widow-poster.jpg",
+        name: "Black Widow",
+    },
+    {
+        img: "https://w0.peakpx.com/wallpaper/907/231/HD-wallpaper-thanos-avengers-villian.jpg",
+        name: "Thanos",
+    },
+    {
+        img: "https://w0.peakpx.com/wallpaper/466/11/HD-wallpaper-doctor-strange-doctorstrange-mage-marvel-superheroes.jpg",
+        name: "Doctor Strange",
+    },
+    {
+        img: "https://w0.peakpx.com/wallpaper/435/396/HD-wallpaper-black-panther-7-avengers-black-hero-marvellous-panther-super.jpg",
+        name: "Black Panther",
+    },
+]

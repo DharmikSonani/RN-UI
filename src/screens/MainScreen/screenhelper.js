@@ -41,6 +41,10 @@ const data = [
         title: 'Story Screen',
         screen: Screens.StoryScreen,
     },
+    {
+        title: 'Image Carousel',
+        screen: Screens.ImageCarouselScreen,
+    },
 ]
 
 data.sort((a, b) => {
