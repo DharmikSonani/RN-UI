@@ -14,6 +14,7 @@ import ImageSlider2Screen from '../screens/ImageSliderScreen/screens/ImageSlider
 import ShapeImageScreen from '../screens/ShapeImageScreen/ShapeImageScreen';
 import ImageSlider3Screen from '../screens/ImageSliderScreen/screens/ImageSlider3Screen';
 import ToggleButtonScreen from '../screens/ToggleButtonScreen/ToggleButtonScreen';
+import StoryScreen from '../screens/StoryScreen/StoryScreen';
 
 const Stack = createStackNavigator();
 
@@ -75,6 +76,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.ToggleButtonScreen}
                 component={ToggleButtonScreen}
+            />
+            <Stack.Screen
+                name={Screens.StoryScreen}
+                component={StoryScreen}
             />
         </Stack.Navigator>
     )

@@ -12,4 +12,5 @@ export const Screens = {
     DraggableScreen: 'Draggable Screen',
     ShapeImageScreen: 'Shape Image Screen',
     ToggleButtonScreen: 'Toggle Button Screen',
+    StoryScreen: 'Story Screen',
 }

@@ -37,6 +37,10 @@ const data = [
         title: 'Toggle Button',
         screen: Screens.ToggleButtonScreen,
     },
+    {
+        title: 'Story Screen',
+        screen: Screens.StoryScreen,
+    },
 ]
 
 data.sort((a, b) => {
