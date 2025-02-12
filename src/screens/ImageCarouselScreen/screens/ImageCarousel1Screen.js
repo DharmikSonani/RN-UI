@@ -5,6 +5,7 @@ import { NatureImageList } from '../../../helper/ImageData';
 
 const width = Dimensions.get('window').width
 const image_width = width * 0.7;
+const paddingHorizontal = (width - image_width) / 2;
 
 
 // -------------- Background Image Component --------------
@@ -178,7 +179,10 @@ const ImageCarousel1Screen = () => {
                 bounces={false}
                 showsHorizontalScrollIndicator={false}
                 snapToInterval={image_width}
-                onScroll={(scroll) => { scrollTo(scroll.nativeEvent.contentOffset.x / image_width); }}
+                onScroll={(scroll) => {
+                    console.log(scroll.nativeEvent.contentOffset.x / image_width)
+                    scrollTo(scroll.nativeEvent.contentOffset.x / image_width);
+                }}
             />
         </View >
     )
@@ -205,7 +209,7 @@ const styles = StyleSheet.create({
         paddingTop: 30,
     },
     CardContentContainer: {
-        paddingHorizontal: [width - image_width] / 2,
+        paddingHorizontal: paddingHorizontal,
         paddingBottom: 60,
     },
 })
