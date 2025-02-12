@@ -12,6 +12,7 @@ import DraggableScreen from '../screens/DraggableScreen/DraggableScreen';
 import ImageSlider1Screen from '../screens/ImageSliderScreen/screens/ImageSlider1Screen';
 import ImageSlider2Screen from '../screens/ImageSliderScreen/screens/ImageSlider2Screen';
 import ShapeImageScreen from '../screens/ShapeImageScreen/ShapeImageScreen';
+import ImageSlider3Screen from '../screens/ImageSliderScreen/screens/ImageSlider3Screen';
 
 const Stack = createStackNavigator();
 
@@ -57,6 +58,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.ImageSlider2Screen}
                 component={ImageSlider2Screen}
+            />
+            <Stack.Screen
+                name={Screens.ImageSlider3Screen}
+                component={ImageSlider3Screen}
             />
             <Stack.Screen
                 name={Screens.DraggableScreen}
