@@ -2,7 +2,7 @@
 // https://github.com/react-native-masked-view/masked-view   <--------  use this link for MaskedView installation
 
 import { StyleSheet, Image, View } from 'react-native'
-import React from 'react'
+import React, { memo } from 'react'
 import MaskedView from '@react-native-masked-view/masked-view';
 
 const ShapedImage = ({
@@ -75,6 +75,6 @@ const ShapedImage = ({
     )
 }
 
-export default ShapedImage
+export default memo(ShapedImage)
 
 const styles = StyleSheet.create({})

@@ -1,5 +1,5 @@
 import { StyleSheet, View, } from 'react-native'
-import React from 'react'
+import React, { memo } from 'react'
 import ShapedImage from './ShapedImage'
 
 const CustomeMarkerShape = ({
@@ -105,6 +105,6 @@ const CustomeMarkerShape = ({
     )
 }
 
-export default CustomeMarkerShape
+export default memo(CustomeMarkerShape)
 
 const styles = StyleSheet.create({})
