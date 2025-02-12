@@ -22,6 +22,7 @@ const ImageSlider2 = ({
                 [{ nativeEvent: { contentOffset: { x: scrollX } } }],
                 { useNativeDriver: true }
             )}
+            style={{ flexGrow: 0 }}
         >
             {
                 data.map((item, index) => {

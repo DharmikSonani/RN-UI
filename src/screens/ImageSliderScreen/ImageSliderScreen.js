@@ -1,27 +1,35 @@
-import { ScrollView, } from 'react-native'
+import { FlatList, Text, } from 'react-native'
 import React from 'react'
 import useScreenHooks from './ImageSliderScreen.Hook'
 import { styles } from './styles'
-import ImageSlider2 from './components/ImageSlider2'
-import { ImageSliderList } from '../../helper/ImageData'
-import ImageSlider1 from './components/ImageSlider1'
+import ItemView from '../../components/ItemView'
+import data from './screenhelper'
 
 const ImageSliderScreen = (props) => {
 
     const {
-
+        navigation
     } = useScreenHooks(props)
 
     return (
-        <ScrollView
+        <FlatList
+            data={data}
+            showsVerticalScrollIndicator={false}
+            renderItem={({ item }) =>
+                <ItemView
+                    data={item}
+                    navigation={navigation}
+                />
+            }
+            keyExtractor={(item, index) => index}
             style={styles.Container}
             contentContainerStyle={styles.ContentContainer}
-            bounces={false}
-            showsVerticalScrollIndicator={false}
-        >
-            <ImageSlider1 data={ImageSliderList} />
-            <ImageSlider2 data={ImageSliderList} />
-        </ScrollView>
+            ListHeaderComponent={
+                <Text style={styles.Header}>
+                    Image Slider
+                </Text>
+            }
+        />
     )
 }
 
