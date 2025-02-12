@@ -9,8 +9,8 @@ import AnalogClockScreen from '../screens/AnalogClockScreen/AnalogClockScreen';
 import AddToCartScreen from '../screens/AddToCartScreen/AddToCartScreen';
 import ImageSliderScreen from '../screens/ImageSliderScreen/ImageSliderScreen';
 import DraggableScreen from '../screens/DraggableScreen/DraggableScreen';
-import ImageSlider1Screen from '../screens/ImageSliderScreen/Screens/ImageSlider1Screen';
-import ImageSlider2Screen from '../screens/ImageSliderScreen/Screens/ImageSlider2Screen';
+import ImageSlider1Screen from '../screens/ImageSliderScreen/screens/ImageSlider1Screen';
+import ImageSlider2Screen from '../screens/ImageSliderScreen/screens/ImageSlider2Screen';
 
 const Stack = createStackNavigator();
 
