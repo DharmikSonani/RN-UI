@@ -26,6 +26,7 @@ import AnimatedTab1 from '../screens/BottomTabScreen/tab-bars/Style1/AnimatedTab
 import AnimatedTab2 from '../screens/BottomTabScreen/tab-bars/Style2/AnimatedTab2';
 import AnimatedTab3 from '../screens/BottomTabScreen/tab-bars/Style3/AnimatedTab3';
 import AnimatedTab4 from '../screens/BottomTabScreen/tab-bars/Style4/AnimatedTab4';
+import ImageSlider4Screen from '../screens/ImageSliderScreen/screens/ImageSlider4Screen';
 
 const Stack = createStackNavigator();
 
@@ -75,6 +76,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.ImageSlider3Screen}
                 component={ImageSlider3Screen}
+            />
+            <Stack.Screen
+                name={Screens.ImageSlider4Screen}
+                component={ImageSlider4Screen}
             />
             <Stack.Screen
                 name={Screens.DraggableScreen}

@@ -13,6 +13,10 @@ const data = [
         title: 'Image Slider 3 (Window Effect)',
         screen: Screens.ImageSlider3Screen,
     },
+    {
+        title: 'Image Slider 4',
+        screen: Screens.ImageSlider4Screen,
+    },
 ]
 
 data.sort((a, b) => {
