@@ -1,5 +1,5 @@
 import { Animated, Dimensions, FlatList, StyleSheet, View } from 'react-native'
-import React, { memo, useCallback, useEffect, useRef } from 'react'
+import React, { memo, useCallback, useRef } from 'react'
 import FastImage from 'react-native-fast-image';
 import { NatureImageList } from '../../../helper/ImageData';
 
@@ -120,8 +120,6 @@ const ImageCarousel1Screen = () => {
     const scrollX = useRef(new Animated.Value(0)).current;
     const data = NatureImageList;
 
-    useEffect(() => { setTimeout(() => { scrollTo(); }, 1); }, [])
-
     const inputRange = useCallback((index) => [
         (data.length - 1 - index - 1) * (width),
         (data.length - 1 - index) * (width),
@@ -179,10 +177,8 @@ const ImageCarousel1Screen = () => {
                 bounces={false}
                 showsHorizontalScrollIndicator={false}
                 snapToInterval={image_width}
-                onScroll={(scroll) => {
-                    console.log(scroll.nativeEvent.contentOffset.x / image_width)
-                    scrollTo(scroll.nativeEvent.contentOffset.x / image_width);
-                }}
+                onScroll={(scroll) => { scrollTo(scroll.nativeEvent.contentOffset.x / image_width); }}
+                onLayout={() => { scrollTo(); }}
             />
         </View >
     )
