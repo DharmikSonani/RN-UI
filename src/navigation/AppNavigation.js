@@ -27,6 +27,7 @@ import AnimatedTab2 from '../screens/BottomTabScreen/tab-bars/Style2/AnimatedTab
 import AnimatedTab3 from '../screens/BottomTabScreen/tab-bars/Style3/AnimatedTab3';
 import AnimatedTab4 from '../screens/BottomTabScreen/tab-bars/Style4/AnimatedTab4';
 import ImageSlider4Screen from '../screens/ImageSliderScreen/screens/ImageSlider4Screen';
+import BiometricsScreen from '../screens/BiometricsScreen/BiometricsScreen';
 
 const Stack = createStackNavigator();
 
@@ -140,6 +141,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.BottomTabStyle4Screen}
                 component={AnimatedTab4}
+            />
+            <Stack.Screen
+                name={Screens.BiometricsScreen}
+                component={BiometricsScreen}
             />
         </Stack.Navigator>
     )

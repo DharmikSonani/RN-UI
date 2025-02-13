@@ -49,6 +49,10 @@ const data = [
         title: 'Bottom Tabs',
         screen: Screens.BottomTabScreen,
     },
+    {
+        title: 'Biometrics',
+        screen: Screens.BiometricsScreen,
+    },
 ]
 
 data.sort((a, b) => {
