@@ -107,3 +107,46 @@ export const MarvelImageList = [
         name: "Black Panther",
     },
 ]
+
+export const Vishnu10Avatars = [
+    {
+        img: require('../assets/images/vishnu-10-avatar/1-matsya.jpeg'),
+        name: "Matsya",
+    },
+    {
+        img: require('../assets/images/vishnu-10-avatar/2-kurma.png'),
+        name: "Kurma",
+    },
+    {
+        img: require('../assets/images/vishnu-10-avatar/3-varah.jpeg'),
+        name: "Varaha",
+    },
+    {
+        img: require('../assets/images/vishnu-10-avatar/4-narasimha.jpeg'),
+        name: "Narasimha",
+    },
+    {
+        img: require('../assets/images/vishnu-10-avatar/5-vamana.webp'),
+        name: "Vamana",
+    },
+    {
+        img: require('../assets/images/vishnu-10-avatar/6-parshuram.jpg'),
+        name: "Parashurama",
+    },
+    {
+        img: require('../assets/images/vishnu-10-avatar/7-ram.jpg'),
+        name: "Rama",
+    },
+    {
+        img: require('../assets/images/vishnu-10-avatar/8-krishna.jpg'),
+        name: "Krishna",
+    },
+    {
+        img: require('../assets/images/vishnu-10-avatar/9-buddha.jpeg'),
+        name: "Buddha",
+    },
+    {
+        img: require('../assets/images/vishnu-10-avatar/10-kalki.jpg'),
+        name: "Kalki",
+    },
+]

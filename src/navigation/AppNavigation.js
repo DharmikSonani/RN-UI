@@ -17,6 +17,7 @@ import ToggleButtonScreen from '../screens/ToggleButtonScreen/ToggleButtonScreen
 import StoryScreen from '../screens/StoryScreen/StoryScreen';
 import ImageCarouselScreen from '../screens/ImageCarouselScreen/ImageCarouselScreen';
 import ImageCarousel1Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel1Screen';
+import ImageCarousel2Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel2Screen';
 
 const Stack = createStackNavigator();
 
@@ -90,6 +91,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.ImageCarousel1Screen}
                 component={ImageCarousel1Screen}
+            />
+            <Stack.Screen
+                name={Screens.ImageCarousel2Screen}
+                component={ImageCarousel2Screen}
             />
         </Stack.Navigator>
     )

@@ -15,4 +15,5 @@ export const Screens = {
     StoryScreen: 'Story Screen',
     ImageCarouselScreen: 'Image Carousel Screen',
     ImageCarousel1Screen: 'Image Carousel 1 Screen',
+    ImageCarousel2Screen: 'Image Carousel 2 Screen',
 }

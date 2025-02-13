@@ -5,6 +5,10 @@ const data = [
         title: 'Image Carousel 1',
         screen: Screens.ImageCarousel1Screen,
     },
+    {
+        title: 'Image Carousel 2',
+        screen: Screens.ImageCarousel2Screen,
+    },
 ]
 
 data.sort((a, b) => {
