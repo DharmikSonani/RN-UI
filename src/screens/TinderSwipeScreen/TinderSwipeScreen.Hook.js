@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MarvelImageList } from "../../helper/ImageData";
 import { Animated, PanResponder } from "react-native";
 
@@ -16,13 +16,7 @@ const useScreenHooks = (props) => {
 
     // methods
     const RemoveCard = () => {
-        setData(prepState => {
-            if (prepState.slice(1).length > 0) {
-                return prepState.slice(1);
-            } else {
-                return MarvelImageList
-            }
-        });
+        setData(pre => pre.length > 1 ? pre.slice(1) : MarvelImageList);
     }
 
     const panResponder = PanResponder.create({
