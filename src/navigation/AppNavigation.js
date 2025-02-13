@@ -18,6 +18,8 @@ import StoryScreen from '../screens/StoryScreen/StoryScreen';
 import ImageCarouselScreen from '../screens/ImageCarouselScreen/ImageCarouselScreen';
 import ImageCarousel1Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel1Screen';
 import ImageCarousel2Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel2Screen';
+import ImageCarousel3Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel3Screen';
+import ImageCarousel4Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel4Screen';
 
 const Stack = createStackNavigator();
 
@@ -95,6 +97,14 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.ImageCarousel2Screen}
                 component={ImageCarousel2Screen}
+            />
+            <Stack.Screen
+                name={Screens.ImageCarousel3Screen}
+                component={ImageCarousel3Screen}
+            />
+            <Stack.Screen
+                name={Screens.ImageCarousel4Screen}
+                component={ImageCarousel4Screen}
             />
         </Stack.Navigator>
     )
