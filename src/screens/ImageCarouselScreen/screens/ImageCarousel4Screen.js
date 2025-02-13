@@ -73,15 +73,21 @@ const Card = memo(({
                             perspective: image_width * 2,
                         },
                         {
-                            translateX: scrollX?.interpolate({
-                                inputRange: inputRange,
-                                outputRange: [image_width / 2.2, image_width / 8, 0, -image_width / 8, -image_width / 2.2]
-                            })
+                            translateX: Platform.OS == 'android' ?
+                                scrollX?.interpolate({
+                                    inputRange: inputRange,
+                                    outputRange: [image_width * 0.55, image_width * 0.15, 0, -image_width * 0.15, -image_width * 0.55]
+                                })
+                                :
+                                scrollX?.interpolate({
+                                    inputRange: inputRange,
+                                    outputRange: [image_width * 0.55, image_width * 0.175, 0, -image_width * 0.175, -image_width * 0.55]
+                                })
                         },
                         {
                             scale: scrollX?.interpolate({
                                 inputRange: inputRange,
-                                outputRange: [0.7, 0.9, 1, 0.9, 0.7]
+                                outputRange: [0.65, 0.9, 1, 0.9, 0.65]
                             })
                         },
                         {

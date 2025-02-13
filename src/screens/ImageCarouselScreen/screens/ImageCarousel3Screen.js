@@ -73,16 +73,22 @@ const Card = memo(({
                             perspective: image_width * 2,
                         },
                         {
-                            scale: Platform.OS == 'android' ?
+                            translateX: Platform.OS == 'android' ?
                                 scrollX?.interpolate({
                                     inputRange: inputRange,
-                                    outputRange: [1.5, 1.1, 1, 1.1, 1.5]
+                                    outputRange: [image_width * 0.4, image_width * 0.2, 0, -image_width * 0.2, -image_width * 0.4]
                                 })
                                 :
                                 scrollX?.interpolate({
                                     inputRange: inputRange,
-                                    outputRange: [2, 1.1, 1, 1.1, 2]
+                                    outputRange: [image_width * 0.5, image_width * 0.2, 0, -image_width * 0.2, -image_width * 0.5]
                                 })
+                        },
+                        {
+                            scale: scrollX?.interpolate({
+                                inputRange: inputRange,
+                                outputRange: [1.35, 1.1, 1, 1.1, 1.35]
+                            })
                         },
                         {
                             rotateY: scrollX?.interpolate({
@@ -90,12 +96,7 @@ const Card = memo(({
                                 outputRange: ['45deg', '22.5deg', '0deg', '-22.5deg', '-45deg']
                             })
                         },
-                        {
-                            translateX: scrollX?.interpolate({
-                                inputRange: inputRange,
-                                outputRange: [image_width / 2.5, image_width / 5, 0, -image_width / 5, -image_width / 2.5]
-                            })
-                        },
+
                     ]
                 }]}
             >
