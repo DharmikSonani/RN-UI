@@ -26,4 +26,5 @@ export const Screens = {
     BottomTabStyle3Screen: 'Bottom Tab Style 3 Screen',
     BottomTabStyle4Screen: 'Bottom Tab Style 4 Screen',
     BiometricsScreen: 'Biometrics Screen',
+    TinderSwipeScreen: 'Tinder Swipe Screen',
 }

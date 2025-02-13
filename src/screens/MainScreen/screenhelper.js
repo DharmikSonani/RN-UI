@@ -53,6 +53,10 @@ const data = [
         title: 'Biometrics',
         screen: Screens.BiometricsScreen,
     },
+    {
+        title: 'Tinder Swipe',
+        screen: Screens.TinderSwipeScreen,
+    },
 ]
 
 data.sort((a, b) => {

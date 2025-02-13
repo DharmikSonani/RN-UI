@@ -28,6 +28,7 @@ import AnimatedTab3 from '../screens/BottomTabScreen/tab-bars/Style3/AnimatedTab
 import AnimatedTab4 from '../screens/BottomTabScreen/tab-bars/Style4/AnimatedTab4';
 import ImageSlider4Screen from '../screens/ImageSliderScreen/screens/ImageSlider4Screen';
 import BiometricsScreen from '../screens/BiometricsScreen/BiometricsScreen';
+import TinderSwipeScreen from '../screens/TinderSwipeScreen/TinderSwipeScreen';
 
 const Stack = createStackNavigator();
 
@@ -145,6 +146,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.BiometricsScreen}
                 component={BiometricsScreen}
+            />
+            <Stack.Screen
+                name={Screens.TinderSwipeScreen}
+                component={TinderSwipeScreen}
             />
         </Stack.Navigator>
     )
