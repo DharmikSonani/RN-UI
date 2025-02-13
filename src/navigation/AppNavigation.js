@@ -20,6 +20,7 @@ import ImageCarousel1Screen from '../screens/ImageCarouselScreen/screens/ImageCa
 import ImageCarousel2Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel2Screen';
 import ImageCarousel3Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel3Screen';
 import ImageCarousel4Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel4Screen';
+import ImageCarousel5Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel5Screen';
 
 const Stack = createStackNavigator();
 
@@ -105,6 +106,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.ImageCarousel4Screen}
                 component={ImageCarousel4Screen}
+            />
+            <Stack.Screen
+                name={Screens.ImageCarousel5Screen}
+                component={ImageCarousel5Screen}
             />
         </Stack.Navigator>
     )
