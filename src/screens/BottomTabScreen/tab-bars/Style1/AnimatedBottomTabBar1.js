@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
         width: ScreenWidth,
         alignItems: 'center',
         flexDirection: 'row',
-        paddingBottom: 10,
+        paddingBottom: 20,
         backgroundColor: "#000000",
     },
     SelectedTabContainer: {

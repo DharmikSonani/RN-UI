@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         width: ScreenWidth,
         alignItems: 'center',
         flexDirection: 'row',
-        paddingBottom: 15,
+        paddingBottom: 25,
         paddingTop: 5,
         backgroundColor: "#5B37B7",
     },
