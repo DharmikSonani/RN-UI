@@ -61,11 +61,13 @@ const CardComponent = memo(({
                     ]
                 }]}
             >
+                {/* <Animated.View style={{ transform: [{ scale },] }}> */}
                 <FastImage
                     source={{ uri: data }}
                     style={cardStyles.ImageStyle}
                     resizeMode='cover'
                 />
+                {/* </Animated.View> */}
                 <View style={cardStyles.Overlay} />
             </Animated.View>
 
@@ -83,11 +85,13 @@ const CardComponent = memo(({
                     ]
                 }]}
             >
+                {/* <Animated.View style={{ transform: [{ scale },] }}> */}
                 <FastImage
                     source={{ uri: data }}
                     style={cardStyles.ImageStyle}
                     resizeMode='cover'
                 />
+                {/* </Animated.View> */}
             </Animated.View>
         </View>
     )
