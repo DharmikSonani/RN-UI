@@ -9,7 +9,7 @@ import Setting from '../../tab-screens/Setting';
 
 const Tab = createBottomTabNavigator();
 
-const AnimatedTab3 = memo(() => {
+const AnimatedTab3 = () => {
     return (
         <Tab.Navigator
             screenOptions={{
@@ -41,7 +41,7 @@ const AnimatedTab3 = memo(() => {
             }
         </Tab.Navigator>
     )
-})
+}
 
 export default AnimatedTab3
 

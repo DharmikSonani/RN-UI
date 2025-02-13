@@ -5,7 +5,7 @@ import { AnimatedBottomTabBar2 } from './AnimatedBottomTabBar2';
 
 const Tab = createBottomTabNavigator();
 
-const AnimatedTab2 = memo(() => {
+const AnimatedTab2 = () => {
     return (
         <Tab.Navigator
             screenOptions={{
@@ -32,6 +32,6 @@ const AnimatedTab2 = memo(() => {
             }
         </Tab.Navigator>
     )
-})
+}
 
 export default AnimatedTab2
