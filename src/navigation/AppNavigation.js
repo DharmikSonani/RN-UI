@@ -21,6 +21,11 @@ import ImageCarousel2Screen from '../screens/ImageCarouselScreen/screens/ImageCa
 import ImageCarousel3Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel3Screen';
 import ImageCarousel4Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel4Screen';
 import ImageCarousel5Screen from '../screens/ImageCarouselScreen/screens/ImageCarousel5Screen';
+import BottomTabScreen from '../screens/BottomTabScreen/BottomTabScreen';
+import AnimatedTab1 from '../screens/BottomTabScreen/tab-bars/Style1/AnimatedTab1';
+import AnimatedTab2 from '../screens/BottomTabScreen/tab-bars/Style2/AnimatedTab2';
+import AnimatedTab3 from '../screens/BottomTabScreen/tab-bars/Style3/AnimatedTab3';
+import AnimatedTab4 from '../screens/BottomTabScreen/tab-bars/Style4/AnimatedTab4';
 
 const Stack = createStackNavigator();
 
@@ -110,6 +115,26 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.ImageCarousel5Screen}
                 component={ImageCarousel5Screen}
+            />
+            <Stack.Screen
+                name={Screens.BottomTabScreen}
+                component={BottomTabScreen}
+            />
+            <Stack.Screen
+                name={Screens.BottomTabStyle1Screen}
+                component={AnimatedTab1}
+            />
+            <Stack.Screen
+                name={Screens.BottomTabStyle2Screen}
+                component={AnimatedTab2}
+            />
+            <Stack.Screen
+                name={Screens.BottomTabStyle3Screen}
+                component={AnimatedTab3}
+            />
+            <Stack.Screen
+                name={Screens.BottomTabStyle4Screen}
+                component={AnimatedTab4}
             />
         </Stack.Navigator>
     )

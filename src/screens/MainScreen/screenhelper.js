@@ -45,6 +45,10 @@ const data = [
         title: 'Image Carousel',
         screen: Screens.ImageCarouselScreen,
     },
+    {
+        title: 'Bottom Tabs',
+        screen: Screens.BottomTabScreen,
+    },
 ]
 
 data.sort((a, b) => {

@@ -19,4 +19,9 @@ export const Screens = {
     ImageCarousel3Screen: 'Image Carousel 3 Screen',
     ImageCarousel4Screen: 'Image Carousel 4 Screen',
     ImageCarousel5Screen: 'Image Carousel 5 Screen',
+    BottomTabScreen: 'Bottom Tab Screen',
+    BottomTabStyle1Screen: 'Bottom Tab Style 1 Screen',
+    BottomTabStyle2Screen: 'Bottom Tab Style 2 Screen',
+    BottomTabStyle3Screen: 'Bottom Tab Style 3 Screen',
+    BottomTabStyle4Screen: 'Bottom Tab Style 4 Screen',
 }
