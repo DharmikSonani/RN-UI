@@ -8,6 +8,7 @@ const useScreenHooks = () => {
 
     // variables
     const _scrollView = useRef();
+    const data = NatureImageList;
 
     // useStates
     const [imageHeight, setImageHeight] = useState(0);
@@ -17,13 +18,13 @@ const useScreenHooks = () => {
 
     // methods
     const scrollTo = useCallback((value = 0) => {
-        _scrollView?.current?.scrollTo({ x: ((NatureImageList.length - 1) * width) - value, animated: false })
-    }, [_scrollView.current])
+        _scrollView?.current?.scrollTo({ x: ((data.length - 1) * width) - value, animated: false })
+    }, [_scrollView, data.length])
 
     return {
         _scrollView,
         width,
-        NatureImageList,
+        data,
 
         imageHeight, setImageHeight,
 

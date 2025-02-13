@@ -9,7 +9,7 @@ const SlideImageScreen = (props) => {
     const {
         _scrollView,
         width,
-        NatureImageList,
+        data,
 
         imageHeight, setImageHeight,
 
@@ -25,11 +25,14 @@ const SlideImageScreen = (props) => {
                 ref={_scrollView}
                 style={{ flex: 1, }}
                 horizontal
+                contentContainerStyle={{ width: width * data?.length }}
                 showsHorizontalScrollIndicator={false}
                 bounces={false}
+                onLayout={() => { setTimeout(() => { scrollTo(); }, 0); }}
+                pagingEnabled
             >
                 {
-                    NatureImageList.map((imgUri, i) =>
+                    data.map((imgUri, i) =>
                         <FastImage
                             key={i}
                             resizeMode='cover'
@@ -41,7 +44,7 @@ const SlideImageScreen = (props) => {
             </Animated.ScrollView>
 
             <Animated.FlatList
-                data={NatureImageList}
+                data={data}
                 horizontal
                 pagingEnabled
                 bounces={false}
@@ -62,7 +65,6 @@ const SlideImageScreen = (props) => {
                 }
                 style={[styles.FrontContainer, { height: imageHeight }]}
                 contentContainerStyle={styles.FrontContentContainer}
-                onLayout={() => { scrollTo(); }}
             />
         </View>
     )

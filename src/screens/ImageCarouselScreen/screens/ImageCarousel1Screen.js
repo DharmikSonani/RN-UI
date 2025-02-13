@@ -124,17 +124,18 @@ const ImageCarousel1Screen = () => {
         (data.length - 1 - index - 1) * (width),
         (data.length - 1 - index) * (width),
         (data.length - 1 - index + 1) * (width),
-    ], [data])
+    ], [data.length])
 
     const scrollTo = useCallback((value = 0) => {
         _scrollview.current.scrollTo({ x: (data.length - 1 - value) * width, animated: false })
-    }, [_scrollview.current])
+    }, [_scrollview, data.length])
 
     return (
         <View style={styles.Container}>
             <Animated.ScrollView
                 ref={_scrollview}
                 style={styles.BackgroudContainer}
+                contentContainerStyle={{ width: width * data?.length }}
                 horizontal
                 alwaysBounceHorizontal={false}
                 showsHorizontalScrollIndicator={false}
@@ -143,6 +144,8 @@ const ImageCarousel1Screen = () => {
                     [{ nativeEvent: { contentOffset: { x: scrollX } } }],
                     { useNativeDriver: true, }
                 )}
+                onLayout={() => { setTimeout(() => { scrollTo(); }, 0); }}
+                pagingEnabled
             >
                 {
                     data.map((item, index) => {
@@ -178,7 +181,6 @@ const ImageCarousel1Screen = () => {
                 showsHorizontalScrollIndicator={false}
                 snapToInterval={image_width}
                 onScroll={(scroll) => { scrollTo(scroll.nativeEvent.contentOffset.x / image_width); }}
-                onLayout={() => { scrollTo(); }}
             />
         </View >
     )
