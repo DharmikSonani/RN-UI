@@ -68,7 +68,6 @@ const CardComponent = memo(({
                     resizeMode='cover'
                 />
                 {/* </Animated.View> */}
-                <View style={cardStyles.Overlay} />
             </Animated.View>
 
             <Animated.View
@@ -135,12 +134,6 @@ const cardStyles = StyleSheet.create({
         width: height,
         aspectRatio: 1 / 1,
     },
-    Overlay: {
-        backgroundColor: 'rgba(0,0,0,0.3)',
-        height: '100%',
-        width: '100%',
-        position: 'absolute',
-    }
 })
 
 // -------------- Image Carousel 5 Screen --------------
