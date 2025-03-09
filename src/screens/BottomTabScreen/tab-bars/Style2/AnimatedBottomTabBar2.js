@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
         width: ScreenWidth,
         backgroundColor: "#5B37B7",
         height: '100%',
+        marginHorizontal: -1,
     },
     SelectedTabContainer: {
         position: 'absolute',
