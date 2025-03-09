@@ -1,6 +1,7 @@
 import { Animated, Dimensions, View, StyleSheet } from 'react-native'
 import React, { memo, useEffect, useRef } from 'react'
 import AnimatedTabButton1 from './AnimatedTabButton1';
+import Shape from './Shape';
 
 const ScreenWidth = Dimensions.get("window").width;
 
@@ -19,7 +20,6 @@ export const AnimatedBottomTabBar1 = memo((props) => {
 
     return (
         <View style={styles.TabBarContainer}>
-
             {/* Tab Bar Buttons */}
             {
                 props.state.routes.map((route, i) => {
@@ -49,39 +49,25 @@ export const AnimatedBottomTabBar1 = memo((props) => {
                     )
                 })
             }
-
-            {/* Selected Tab View */}
             <Animated.View style={[styles.SelectedTabContainer, {
                 width: TabButtonWidth,
                 transform: [
-                    ...TabAnimation.getTranslateTransform()
+                    ...TabAnimation.getTranslateTransform(),
                 ],
             }]}>
+                <View style={styles.TabBar} />
 
-                {/* Left Round Corner */}
-                <View
-                    style={[styles.RoundCorners, {
-                        borderTopLeftRadius: 15,
-                        transform: [{ rotate: "57deg" }]
-                    }]}
-                />
-
-                {/* Middle White Circle */}
-                <View style={styles.SelectedTab}>
-
-                    {/* Blue Selected Circle */}
-                    <View
-                        style={styles.SelectedCircle}
-                    />
+                <View style={{
+                    height: '100%',
+                    width: TabButtonWidth,
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                }} >
+                    <View style={styles.SelectedCircle} />
+                    <Shape width={TabButtonWidth} />
                 </View>
 
-                {/* Right Round Corner */}
-                <View
-                    style={[styles.RoundCorners, {
-                        borderTopRightRadius: 15,
-                        transform: [{ rotate: "-57deg" }]
-                    }]}
-                />
+                <View style={styles.TabBar} />
             </Animated.View>
         </View>
     )
@@ -93,37 +79,29 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         paddingBottom: 20,
-        backgroundColor: "#000000",
+        position: 'absolute',
+        bottom: 0,
+        zIndex: 10,
+    },
+    TabBar: {
+        width: ScreenWidth,
+        backgroundColor: '#000',
+        height: '100%',
     },
     SelectedTabContainer: {
         position: 'absolute',
-        height: '100%',
+        height: '150%',
         top: 0,
         flexDirection: 'row',
         justifyContent: 'center',
-    },
-    SelectedTab: {
-        width: 65,
-        padding: 8,
-        aspectRatio: 1 / 1,
-        borderBottomRightRadius: 32,
-        borderTopLeftRadius: 40,
-        transform: [{ rotate: "45deg" }],
-        top: -32.5,
         alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: -1,
-        backgroundColor: '#fff',
-    },
-    RoundCorners: {
-        width: 30,
-        aspectRatio: 1 / 1,
-        backgroundColor: "#000",
     },
     SelectedCircle: {
-        width: "100%",
+        width: 50,
         aspectRatio: 1 / 1,
         borderRadius: 60,
         backgroundColor: '#17A9FF',
+        top: -50 / 2,
+        marginHorizontal: 22,
     },
 })

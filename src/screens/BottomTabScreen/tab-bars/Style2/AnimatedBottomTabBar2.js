@@ -1,6 +1,7 @@
 import { Animated, Dimensions, StyleSheet, View } from 'react-native'
 import React, { memo, useEffect, useRef, } from 'react'
 import AnimatedTabButton2 from './AnimatedTabButton2';
+import Shape from './Shape';
 
 const ScreenWidth = Dimensions.get("window").width;
 
@@ -18,7 +19,7 @@ export const AnimatedBottomTabBar2 = memo((props) => {
     }, [props.state.index])
 
     return (
-        <Animated.View style={styles.TabBarContainer}>
+        <View style={styles.TabBarContainer}>
             {
                 props.state.routes.map((route, i) => {
 
@@ -52,30 +53,23 @@ export const AnimatedBottomTabBar2 = memo((props) => {
             <Animated.View style={[styles.SelectedTabContainer, {
                 width: TabButtonWidth,
                 transform: [
-                    ...TabAnimation.getTranslateTransform()
+                    ...TabAnimation.getTranslateTransform(),
                 ],
             }]}>
+                <View style={styles.TabBar} />
 
-                {/* Left Round Corner */}
-                <View
-                    style={[styles.RoundCorners, {
-                        borderTopLeftRadius: 15,
-                        transform: [{ rotate: "57deg" }]
-                    }]}
-                />
+                <View style={{
+                    height: '100%',
+                    width: TabButtonWidth,
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                }} >
+                    <Shape width={TabButtonWidth} />
+                </View>
 
-                {/* Middle White Circle */}
-                <View style={styles.SelectedTab} />
-
-                {/* Right Round Corner */}
-                <View
-                    style={[styles.RoundCorners, {
-                        borderTopRightRadius: 15,
-                        transform: [{ rotate: "-57deg" }]
-                    }]}
-                />
+                <View style={styles.TabBar} />
             </Animated.View>
-        </Animated.View>
+        </View>
     )
 })
 
@@ -84,35 +78,24 @@ const styles = StyleSheet.create({
         width: ScreenWidth,
         alignItems: 'center',
         flexDirection: 'row',
-        paddingBottom: 25,
+        paddingBottom: 20,
         paddingTop: 5,
+        position: 'absolute',
+        bottom: 0,
+        zIndex: 10,
+    },
+    TabBar: {
+        width: ScreenWidth,
         backgroundColor: "#5B37B7",
+        height: '100%',
     },
     SelectedTabContainer: {
         position: 'absolute',
-        height: '100%',
+        height: '150%',
         top: 0,
         flexDirection: 'row',
         justifyContent: 'center',
-        zIndex: -1,
-        overflow: 'hidden',
-    },
-    SelectedTab: {
-        width: 65,
-        padding: 8,
-        aspectRatio: 1 / 1,
-        borderBottomRightRadius: 32,
-        borderTopLeftRadius: 40,
-        transform: [{ rotate: "45deg" }],
-        top: -32.5,
         alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: -1,
-        backgroundColor: '#fff',
-    },
-    RoundCorners: {
-        width: 30,
-        aspectRatio: 1 / 1,
-        backgroundColor: "#5B37B7",
+        zIndex: -10,
     },
 })
