@@ -84,5 +84,10 @@
 	</array>
 	<key>NSFaceIDUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like to use your Face ID</string>
+	<!-- Save Data on Device -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photo library to save media.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need access to save images to your gallery.</string>
 </dict>
 </plist>

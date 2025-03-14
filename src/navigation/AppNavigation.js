@@ -29,6 +29,7 @@ import AnimatedTab4 from '../screens/BottomTabScreen/tab-bars/Style4/AnimatedTab
 import ImageSlider4Screen from '../screens/ImageSliderScreen/screens/ImageSlider4Screen';
 import BiometricsScreen from '../screens/BiometricsScreen/BiometricsScreen';
 import TinderSwipeScreen from '../screens/TinderSwipeScreen/TinderSwipeScreen';
+import SaveFileScreen from '../screens/SaveFileScreen/SaveFileScreen';
 
 const Stack = createStackNavigator();
 
@@ -150,6 +151,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.TinderSwipeScreen}
                 component={TinderSwipeScreen}
+            />
+            <Stack.Screen
+                name={Screens.SaveFileScreen}
+                component={SaveFileScreen}
             />
         </Stack.Navigator>
     )

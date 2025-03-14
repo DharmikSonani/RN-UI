@@ -57,6 +57,10 @@ const data = [
         title: 'Tinder Swipe',
         screen: Screens.TinderSwipeScreen,
     },
+    {
+        title: 'Save File (Like Whatsapp)',
+        screen: Screens.SaveFileScreen,
+    },
 ]
 
 data.sort((a, b) => {
