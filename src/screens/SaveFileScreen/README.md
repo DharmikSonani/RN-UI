@@ -51,7 +51,7 @@ class MainApplication : Application(), ReactApplication {
 
 ### 3. Create `RNMediaScannerPackage.kt` (Required)
 
-Create [`android/app/src/main/java/com/rnui/RNMediaScannerPackage.kt`](https://github.com/DharmikSonani/RN-UI/blob/main/android/app/src/main/java/com/rnui/RNMediaScannerPackage.kt):
+Create [`android/app/src/main/java/**com/rnui**/RNMediaScannerPackage.kt`](https://github.com/DharmikSonani/RN-UI/blob/main/android/app/src/main/java/com/rnui/RNMediaScannerPackage.kt):
 
 ```kotlin
 package com.rnui
