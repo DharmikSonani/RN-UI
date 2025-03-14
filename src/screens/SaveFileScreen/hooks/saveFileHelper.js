@@ -2,6 +2,9 @@ import RNFS from 'react-native-fs';
 import { Alert, NativeModules, Platform } from 'react-native';
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
 
+const appName = 'RNUI'; // Your Application Name
+const appPackage = 'com.rnui'; // Your Application Package 
+
 const getFileType = (fileName) => {
   if (!fileName) return 'unknown';
 
@@ -28,16 +31,16 @@ export const fileSetup = (file) => {
   return { fileName, type };
 }
 
-export const baseStoragePath = ({ file, subDir = 'Media' }) => Platform.OS == 'android' ? `${RNFS.ExternalStorageDirectoryPath}/Android/media/com.rnui/RNUI/${subDir}` : `${RNFS.DocumentDirectoryPath}/${file}`;
+export const baseStoragePath = ({ file, subDir = 'Media' }) => Platform.OS == 'android' ? `${RNFS.ExternalStorageDirectoryPath}/Android/media/${appPackage}/${appName}/${subDir}` : `${RNFS.DocumentDirectoryPath}/${file}`;
 
 export const androidFileStorePath = async ({ basePath, file, fileType }) => {
   let folderPath;
   if (fileType === 'image') {
-    folderPath = `${basePath}/RNUI Images/`;
+    folderPath = `${basePath}/${appName} Images/`;
   } else if (fileType === 'video') {
-    folderPath = `${basePath}/RNUI Video/`;
+    folderPath = `${basePath}/${appName} Video/`;
   } else if (fileType === 'document') {
-    folderPath = `${basePath}/RNUI Documents/`;
+    folderPath = `${basePath}/${appName} Documents/`;
   } else {
     folderPath = `${basePath}/Other/`;
   }
