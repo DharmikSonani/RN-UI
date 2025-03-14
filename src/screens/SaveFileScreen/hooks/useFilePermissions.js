@@ -1,7 +1,7 @@
 import { Platform, PermissionsAndroid } from "react-native";
 import { check, request, PERMISSIONS, RESULTS } from "react-native-permissions";
 
-const useFilePermissions = () => {
+export const useFilePermissions = () => {
 
     const checkPermission = async (type) => {
         try {
@@ -37,5 +37,3 @@ const useFilePermissions = () => {
         requestFilePermission,
     };
 };
-
-export default useFilePermissions;

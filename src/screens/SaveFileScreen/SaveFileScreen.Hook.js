@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import useFilePermissions from "./hooks/useFilePermissions";
 import { Alert } from "react-native";
 import { downloadAndSaveFileInDevice, } from "./hooks/saveFileHelper";
+import { useFilePermissions } from "./hooks/useFilePermissions";
 
 const useScreenHooks = (props) => {
 
     // variables
     const navigation = props.navigation;
+
     const { requestFilePermission } = useFilePermissions();
+
     const demoUrls = [
         'https://imgv3.fotor.com/images/slider-image/A-clear-image-of-a-woman-wearing-red-sharpened-by-Fotors-image-sharpener.jpg',
         'https://images7.alphacoders.com/137/1378048.png',
