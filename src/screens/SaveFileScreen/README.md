@@ -141,7 +141,7 @@ pod 'RNFS', :path => '../node_modules/react-native-fs'
 
 ## Helper Hooks
 
-### [`useFilePermissions.js`](https://github.com/DharmikSonani/RN-UI/blob/main/src/screens/SaveFileScreen/hooks/useFilePermissions.js)
+### 1. [`useFilePermissions.js`](https://github.com/DharmikSonani/RN-UI/blob/main/src/screens/SaveFileScreen/hooks/useFilePermissions.js)
 
 ```javascript
 import { Platform, PermissionsAndroid } from "react-native";
@@ -172,7 +172,7 @@ export const useFilePermissions = () => {
 };
 ```
 
-### [`saveFileHelper.js`](https://github.com/DharmikSonani/RN-UI/blob/main/src/screens/SaveFileScreen/hooks/saveFileHelper.js)
+### 2. [`saveFileHelper.js`](https://github.com/DharmikSonani/RN-UI/blob/main/src/screens/SaveFileScreen/hooks/saveFileHelper.js)
 
 ```javascript
 import RNFS from 'react-native-fs';
