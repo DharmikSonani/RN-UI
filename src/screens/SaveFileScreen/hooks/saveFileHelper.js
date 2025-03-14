@@ -1,5 +1,5 @@
 import RNFS from 'react-native-fs';
-import { Alert } from 'react-native';
+import { Alert, NativeModules } from 'react-native';
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
 
 const getFileType = (fileName) => {
@@ -25,6 +25,7 @@ const getFileType = (fileName) => {
 
 export const saveFileToMedia = async (fileUrl) => {
   try {
+    const { RNMediaScanner } = NativeModules;
 
     const fileName = fileUrl.split('/').pop();
     const type = getFileType(fileName);
@@ -59,6 +60,9 @@ export const saveFileToMedia = async (fileUrl) => {
     const downloadResult = await RNFS.downloadFile(downloadOptions).promise;
 
     if (downloadResult.statusCode === 200) {
+      if (RNMediaScanner) {
+        RNMediaScanner.scanFile(destPath);
+      }
       Alert.alert('Success', 'File downloaded and saved successfully.');
     } else {
       Alert.alert('Failed', 'Download failed with status ' + downloadResult.statusCode);
