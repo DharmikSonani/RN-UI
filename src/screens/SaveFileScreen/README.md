@@ -7,7 +7,7 @@ Install the necessary dependencies:
 
 1. [react-native-permissions](https://www.npmjs.com/package/react-native-permissions)
 2. [react-native-fs](https://www.npmjs.com/package/react-native-fs)
-3. [@react-native-camera-roll/camera-roll](https://www.npmjs.com/package/@react-native-camera-roll/camera-roll)
+3. [@react-native-camera-roll/camera-roll](https://www.npmjs.com/package/@react-native-camera-roll/camera-roll) **Note:** Setup only for iOS
 
 **Note:** Follow the dependency setup instructions and complete the required native setup before proceeding.
 
