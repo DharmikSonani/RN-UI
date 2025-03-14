@@ -30,7 +30,7 @@ export const fileSetup = (file) => {
 
 export const baseStoragePath = ({ file, subDir = 'Media' }) => Platform.OS == 'android' ? `${RNFS.ExternalStorageDirectoryPath}/Android/media/com.rnui/RNUI/${subDir}` : `${RNFS.DocumentDirectoryPath}/${file}`;
 
-export const fileStorePath = async ({ basePath, file, fileType }) => {
+export const androidFileStorePath = async ({ basePath, file, fileType }) => {
   let folderPath;
   if (fileType === 'image') {
     folderPath = `${basePath}/RNUI Images/`;
@@ -65,7 +65,7 @@ export const downloadAndSaveFileInDevice = async (fileUrl) => {
     const { fileName, type } = fileSetup(fileUrl);
 
     const basePath = baseStoragePath({ file: fileName, subDir: 'Media' });
-    const toFilePath = Platform.OS == 'ios' ? basePath : await fileStorePath({ file: fileName, fileType: type, basePath: basePath });
+    const toFilePath = Platform.OS == 'ios' ? basePath : await androidFileStorePath({ file: fileName, fileType: type, basePath: basePath });
 
     const downloadResult = await downloadFileAndStore({ fromUrl: fileUrl, toFile: toFilePath });
 
