@@ -17,12 +17,14 @@ export const useFilePermissions = () => {
         let granted = false;
 
         if (Platform.OS === "android") {
-            const androidPermissions = [
-                PERMISSIONS.ANDROID.READ_MEDIA_IMAGES,
-                PERMISSIONS.ANDROID.READ_MEDIA_VIDEO,
-                PERMISSIONS.ANDROID.READ_MEDIA_AUDIO,
-            ];
-
+            const androidPermissions = Platform.Version >= 33 ? // Android 13 or Above
+                [
+                    PERMISSIONS.ANDROID.READ_MEDIA_IMAGES,
+                    PERMISSIONS.ANDROID.READ_MEDIA_VIDEO,
+                    PERMISSIONS.ANDROID.READ_MEDIA_AUDIO,
+                ] : [
+                    PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE
+                ];
             const results = await PermissionsAndroid.requestMultiple(androidPermissions);
             granted = Object.values(results).every((result) => result === PermissionsAndroid.RESULTS.GRANTED);
         } else {

@@ -24,6 +24,7 @@ Add the following permissions inside `android/app/src/main/AndroidManifest.xml`:
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
@@ -156,11 +157,15 @@ export const useFilePermissions = () => {
     const requestFilePermission = async () => {
         let granted = false;
         if (Platform.OS === "android") {
-            const results = await PermissionsAndroid.requestMultiple([
-                PERMISSIONS.ANDROID.READ_MEDIA_IMAGES,
-                PERMISSIONS.ANDROID.READ_MEDIA_VIDEO,
-                PERMISSIONS.ANDROID.READ_MEDIA_AUDIO,
-            ]);
+            const androidPermissions = Platform.Version >= 33 ? // Android 13 or Above
+                [
+                    PERMISSIONS.ANDROID.READ_MEDIA_IMAGES,
+                    PERMISSIONS.ANDROID.READ_MEDIA_VIDEO,
+                    PERMISSIONS.ANDROID.READ_MEDIA_AUDIO,
+                ] : [
+                    PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE
+                ];
+            const results = await PermissionsAndroid.requestMultiple(androidPermissions);
             granted = Object.values(results).every(result => result === PermissionsAndroid.RESULTS.GRANTED);
         } else {
             granted = await request(PERMISSIONS.IOS.PHOTO_LIBRARY) === RESULTS.GRANTED;
