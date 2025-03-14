@@ -74,8 +74,10 @@ export const downloadAndSaveFileInDevice = async (fileUrl) => {
         const { RNMediaScanner } = NativeModules;
         RNMediaScanner && RNMediaScanner.scanFile(toFilePath);
       }
-      if (Platform.OS === 'ios' && (type === 'image' || type === 'video')) {
-        await CameraRoll.save(toFilePath, { type });
+      if (Platform.OS === 'ios') {
+        if (type === 'image' || type === 'video') {
+          await CameraRoll.save(toFilePath, { type });
+        }
       }
       Alert.alert('Success', 'File downloaded and saved successfully.');
     } else {
