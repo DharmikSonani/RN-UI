@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { Platform, PermissionsAndroid } from "react-native";
 import { check, request, PERMISSIONS, RESULTS } from "react-native-permissions";
 
 const useFilePermissions = () => {
-    const [permissionsGranted, setPermissionsGranted] = useState(false);
 
     const checkPermission = async (type) => {
         try {
@@ -31,14 +29,12 @@ const useFilePermissions = () => {
             granted = await request(PERMISSIONS.IOS.PHOTO_LIBRARY) === RESULTS.GRANTED;
         }
 
-        setPermissionsGranted(granted);
         return granted;
     };
 
     return {
         checkPermission,
         requestFilePermission,
-        permissionsGranted,
     };
 };
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useFilePermissions from "./hooks/useFilePermissions";
-import { Alert, Platform } from "react-native";
-import { saveFileToiOS, saveFileToMedia } from "./hooks/saveFileHelper";
+import { Alert } from "react-native";
+import { downloadAndSaveFileInDevice, } from "./hooks/saveFileHelper";
 
 const useScreenHooks = (props) => {
 
@@ -34,13 +34,12 @@ const useScreenHooks = (props) => {
 
     // methods
     const onSavePress = async () => {
-        // Request storage permission
         const hasPermission = await requestFilePermission();
         if (!hasPermission) {
             Alert.alert('Permission Denied', 'Enable storage access to save files.');
             return;
         }
-        Platform.OS == 'android' ? await saveFileToMedia(url, 'image') : await saveFileToiOS(url, 'image');
+        await downloadAndSaveFileInDevice(url);
         setUrl('');
     }
 
