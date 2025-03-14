@@ -51,10 +51,10 @@ class MainApplication : Application(), ReactApplication {
 
 ### 3. Create `RNMediaScannerPackage.kt` (Required)
 
-Create [`android/app/src/main/java/**com/rnui**/RNMediaScannerPackage.kt`](https://github.com/DharmikSonani/RN-UI/blob/main/android/app/src/main/java/com/rnui/RNMediaScannerPackage.kt):
+Create [`android/app/src/main/java/com/rnui/RNMediaScannerPackage.kt`](https://github.com/DharmikSonani/RN-UI/blob/main/android/app/src/main/java/com/rnui/RNMediaScannerPackage.kt):
 
 ```kotlin
-package com.rnui
+package com.rnui // Your Application Package Name As Per MainApplication.kt
 
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.NativeModule
@@ -77,7 +77,7 @@ class RNMediaScannerPackage : ReactPackage {
 Create [`android/app/src/main/java/com/rnui/RNMediaScanner.kt`](https://github.com/DharmikSonani/RN-UI/blob/main/android/app/src/main/java/com/rnui/RNMediaScanner.kt):
 
 ```kotlin
-package com.rnui
+package com.rnui // Your Application Package Name As Per MainApplication.kt
 
 import android.media.MediaScannerConnection
 import android.util.Log
