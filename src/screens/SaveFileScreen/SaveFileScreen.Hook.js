@@ -20,10 +20,12 @@ const useScreenHooks = (props) => {
         'https://cdn.pixabay.com/video/2024/08/16/226795_large.mp4',
         'https://cdn.pixabay.com/video/2025/01/19/253436_large.mp4',
         'https://cdn.pixabay.com/video/2024/10/06/234930_large.mp4',
+        'https://firebasestorage.googleapis.com/v0/b/hysun-solar.appspot.com/o/sales-reports%2FJohn%20Doe-2025-03-01.pdf?alt=media&token=3207fafc-e645-45b9-a25f-656b06614058',
     ]
 
     // useStates
     const [url, setUrl] = useState('');
+    const [progress, setProgress] = useState(0);
 
     // useEffects
     useEffect(() => {
@@ -41,13 +43,15 @@ const useScreenHooks = (props) => {
             Alert.alert('Permission Denied', 'Enable storage access to save files.');
             return;
         }
-        await downloadAndSaveFileInDevice(url);
+        await downloadAndSaveFileInDevice({ fileUrl: url, progress: setProgress });
         setUrl('');
+        setProgress(0);
     }
 
     return {
         navigation,
         demoUrls,
+        progress,
 
         url, setUrl,
 

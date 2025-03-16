@@ -7,7 +7,8 @@ Install the necessary dependencies:
 
 1. [react-native-permissions](https://www.npmjs.com/package/react-native-permissions)
 2. [react-native-fs](https://www.npmjs.com/package/react-native-fs)
-3. [@react-native-camera-roll/camera-roll](https://www.npmjs.com/package/@react-native-camera-roll/camera-roll) (Setup only for iOS)
+3. [rn-fetch-blob](https://www.npmjs.com/package/rn-fetch-blob) (Setup only for iOS)
+4. [@react-native-camera-roll/camera-roll](https://www.npmjs.com/package/@react-native-camera-roll/camera-roll) (Setup only for iOS)
 
 **Note:** Follow the dependency setup instructions and complete the required native setup before proceeding.
 
@@ -137,6 +138,7 @@ setup_permissions([
 ])
 
 pod 'RNFS', :path => '../node_modules/react-native-fs'
+pod 'rn-fetch-blob', :path => '../node_modules/rn-fetch-blob'
 ```
 
 ---
@@ -184,6 +186,7 @@ export const useFilePermissions = () => {
 import RNFS from 'react-native-fs';
 import { Alert, NativeModules, Platform } from 'react-native';
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
+import RNFetchBlob from 'rn-fetch-blob';
 
 const appName = 'RNUI'; // Your Application Name
 const appPackage = 'com.rnui'; // Your Application Package 
@@ -209,7 +212,7 @@ const getFileType = (fileName) => {
 };
 
 export const fileSetup = (file) => {
-  const fileName = file.split('/').pop();
+  const fileName = file?.split('/')?.pop()?.split('?')?.[0]?.replaceAll('%20', ' ')?.split('%2F')?.pop();
   const type = getFileType(fileName);
   return { fileName, type };
 }
@@ -233,27 +236,25 @@ export const androidFileStorePath = async ({ basePath, file, fileType }) => {
   return `${folderPath}${file}`;
 }
 
-export const downloadFileAndStore = async ({ fromUrl, toFile }) => {
+export const downloadFileAndStore = async ({ fromUrl, toFile, progress = () => { } }) => {
   const downloadResult = await RNFS.downloadFile({
     fromUrl: fromUrl,
     toFile: toFile,
     background: true,
-    progress: (res) => {
-      console.log(`Downloading... ${((res.bytesWritten / res.contentLength) * 100).toFixed(2)}%`);
-    },
+    progress: (res) => { progress(((res.bytesWritten / res.contentLength) * 100).toFixed(2)); },
   }).promise;
 
   return downloadResult;
 }
 
-export const downloadAndSaveFileInDevice = async (fileUrl) => {
+export const downloadAndSaveFileInDevice = async ({ fileUrl, progress = () => { } }) => {
   try {
     const { fileName, type } = fileSetup(fileUrl);
 
     const basePath = baseStoragePath({ file: fileName, subDir: 'Media' });
     const toFilePath = Platform.OS == 'ios' ? basePath : await androidFileStorePath({ file: fileName, fileType: type, basePath: basePath });
 
-    const downloadResult = await downloadFileAndStore({ fromUrl: fileUrl, toFile: toFilePath });
+    const downloadResult = await downloadFileAndStore({ fromUrl: fileUrl, toFile: toFilePath, progress: progress });
 
     if (downloadResult.statusCode === 200) {
       if (Platform.OS === 'android') {
@@ -263,6 +264,8 @@ export const downloadAndSaveFileInDevice = async (fileUrl) => {
       if (Platform.OS === 'ios') {
         if (type === 'image' || type === 'video') {
           await CameraRoll.save(toFilePath, { type });
+        } else {
+          RNFetchBlob.ios.previewDocument(toFilePath);
         }
       }
       Alert.alert('Success', 'File downloaded and saved successfully.');
@@ -292,6 +295,6 @@ const saveFile = async (url) => {
         console.log('Permission Denied', 'Enable storage access to save files.');
         return;
     }
-    await downloadAndSaveFileInDevice(url);
+    await downloadAndSaveFileInDevice({ fileUrl: url, progress: (per)=>{console.log(per)} });
 };
 ```

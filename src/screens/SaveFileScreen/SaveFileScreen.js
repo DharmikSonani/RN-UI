@@ -7,8 +7,11 @@ const SaveFileScreen = (props) => {
 
     const {
         demoUrls,
+        progress,
+
         url, setUrl,
-        onSavePress
+
+        onSavePress,
     } = useScreenHooks(props)
 
     return (
@@ -29,6 +32,9 @@ const SaveFileScreen = (props) => {
                     <Text style={styles.ButtonText}>Save</Text>
                 </TouchableOpacity>
             </View>
+
+            {progress > 0 && <Text style={styles.DownloadText}>Downloading... {progress}%</Text>}
+
             <FlatList
                 data={demoUrls}
                 keyExtractor={(item, index) => index.toString()}

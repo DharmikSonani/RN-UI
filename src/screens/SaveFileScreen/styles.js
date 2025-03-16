@@ -40,4 +40,9 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 15,
         borderRadius: 15,
     },
+    DownloadText: {
+        color: 'rgba(0,0,0,1)',
+        fontSize: 14,
+        fontWeight: 'bold',
+    },
 });
