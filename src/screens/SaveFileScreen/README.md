@@ -191,29 +191,28 @@ import RNFetchBlob from 'rn-fetch-blob';
 const appName = 'RNUI'; // Your Application Name
 const appPackage = 'com.rnui'; // Your Application Package 
 
-const getFileType = (fileName) => {
-  if (!fileName) return 'unknown';
-
-  const extension = fileName.split('.').pop().toLowerCase();
+const getFileType = (extension) => {
+  if (!extension) return 'unknown';
 
   const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'heic'];
   const videoExtensions = ['mp4', 'mov', 'avi', 'mkv', 'wmv', 'flv', 'webm'];
   const documentExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'csv', 'rtf'];
 
-  if (imageExtensions.includes(extension)) {
+  if (imageExtensions.includes(extension?.toLowerCase())) {
     return 'image';
-  } else if (videoExtensions.includes(extension)) {
+  } else if (videoExtensions.includes(extension?.toLowerCase())) {
     return 'video';
-  } else if (documentExtensions.includes(extension)) {
+  } else if (documentExtensions.includes(extension?.toLowerCase())) {
     return 'document';
   } else {
     return 'other';
   }
 };
 
-export const fileSetup = (file) => {
-  const fileName = file?.split('/')?.pop()?.split('?')?.[0]?.replaceAll('%20', ' ')?.split('%2F')?.pop();
-  const type = getFileType(fileName);
+export const fileSetup = (file, newName) => {
+  const fileInfo = file?.split('/')?.pop()?.split('?')?.[0]?.replaceAll('%20', ' ')?.split('%2F')?.pop()?.split('.');
+  const fileName = newName ? `${newName}.${fileInfo[1]}` : `${fileInfo[0]}.${fileInfo[1]}`;
+  const type = getFileType(fileInfo?.pop());
   return { fileName, type };
 }
 
@@ -236,6 +235,8 @@ export const androidFileStorePath = async ({ basePath, file, fileType }) => {
   return `${folderPath}${file}`;
 }
 
+// From Url / Server to Media Folder
+
 export const downloadFileAndStore = async ({ fromUrl, toFile, progress = () => { } }) => {
   const downloadResult = await RNFS.downloadFile({
     fromUrl: fromUrl,
@@ -247,9 +248,9 @@ export const downloadFileAndStore = async ({ fromUrl, toFile, progress = () => {
   return downloadResult;
 }
 
-export const downloadAndSaveFileInDevice = async ({ fileUrl, progress = () => { } }) => {
+export const downloadAndSaveFileInDevice = async ({ fileUrl, newName, progress = () => { } }) => {
   try {
-    const { fileName, type } = fileSetup(fileUrl);
+    const { fileName, type } = fileSetup(fileUrl, newName);
 
     const basePath = baseStoragePath({ file: fileName, subDir: 'Media' });
     const toFilePath = Platform.OS == 'ios' ? basePath : await androidFileStorePath({ file: fileName, fileType: type, basePath: basePath });
@@ -275,6 +276,43 @@ export const downloadAndSaveFileInDevice = async ({ fileUrl, progress = () => { 
   } catch (error) {
     console.log('Error saving file:', error);
     Alert.alert('Error', 'Failed to download and save file.');
+  }
+};
+
+// From Internal Storage to Media Folder
+
+export const moveFileAndStore = async ({ fromUrl, toFile, }) => {
+  const fileExists = await RNFS.exists(toFile);
+  if (fileExists) await RNFS.unlink(toFile);
+  await RNFS.moveFile(fromUrl, toFile).promise;
+}
+
+export const saveFileInDevice = async ({ fileUrl, newName, }) => {
+  try {
+    const { fileName, type } = fileSetup(fileUrl, newName);
+
+    const basePath = baseStoragePath({ file: fileName, subDir: 'Media' });
+    const toFilePath = Platform.OS == 'ios' ? basePath : await androidFileStorePath({ file: fileName, fileType: type, basePath: basePath });
+
+    await moveFileAndStore({ fromUrl: fileUrl, toFile: toFilePath });
+
+    if (Platform.OS === 'android') {
+      const { RNMediaScanner } = NativeModules;
+      RNMediaScanner && RNMediaScanner.scanFile(toFilePath);
+    }
+
+    if (Platform.OS === 'ios') {
+      if (type === 'image' || type === 'video') {
+        await CameraRoll.save(toFilePath, { type });
+      } else {
+        RNFetchBlob.ios.previewDocument(toFilePath);
+      }
+    }
+
+    Alert.alert('Success', 'File saved successfully.');
+  } catch (error) {
+    console.log('Error saving file:', error);
+    Alert.alert('Error', 'Failed save file.');
   }
 };
 ```
