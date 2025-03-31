@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Alert } from "react-native";
-import { downloadAndSaveFileInDevice, } from "./hooks/saveFileHelper";
 import { useFilePermissions } from "./hooks/useFilePermissions";
+import { useStorageManager } from "./hooks/storageManager";
+import { downloadAndSaveFileInDevice } from "./hooks/fileStorage";
 
 const useScreenHooks = (props) => {
 
@@ -9,6 +10,7 @@ const useScreenHooks = (props) => {
     const navigation = props.navigation;
 
     const { requestFilePermission } = useFilePermissions();
+    const { fileStorageInfo } = useStorageManager({ mainDir: '/Download/appName/' });
 
     const demoUrls = [
         'https://imgv3.fotor.com/images/slider-image/A-clear-image-of-a-woman-wearing-red-sharpened-by-Fotors-image-sharpener.jpg',
@@ -38,12 +40,24 @@ const useScreenHooks = (props) => {
 
     // methods
     const onSavePress = async () => {
+        if (!url) return;
+
         const hasPermission = await requestFilePermission();
+
         if (!hasPermission) {
             Alert.alert('Permission Denied', 'Enable storage access to save files.');
             return;
         }
-        await downloadAndSaveFileInDevice({ fileUrl: url, progress: setProgress });
+
+        const { fileType, toFilePath } = await fileStorageInfo({ url: url }); // Required for storing a file
+
+        await downloadAndSaveFileInDevice({
+            fromUrl: url,
+            toFile: toFilePath,
+            fileType: fileType,
+            progress: setProgress
+        });
+
         setUrl('');
         setProgress(0);
     }
