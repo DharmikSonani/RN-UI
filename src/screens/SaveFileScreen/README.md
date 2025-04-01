@@ -398,8 +398,7 @@ export const useRingtonesDirectory = () => useStorageDirectories({ mainDir: '/Ri
 
 ---
 
-## Usage - [`Reference`](https://github.com/DharmikSonani/RN-UI/blob/main/src/screens/SaveFileScreen/SaveFileScreen.Hook.js)
-
+## Usage
 ```javascript
 import { useFilePermissions } from "./hooks/useFilePermissions";
 import { downloadAndSaveFileInDevice } from "./hooks/fileManager";
@@ -428,3 +427,4 @@ const saveFile = async (url) => {
     });
 };
 ```
+#### [`Reference`](https://github.com/DharmikSonani/RN-UI/blob/main/src/screens/SaveFileScreen/SaveFileScreen.Hook.js)
