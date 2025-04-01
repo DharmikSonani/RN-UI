@@ -58,7 +58,7 @@ const data = [
         screen: Screens.TinderSwipeScreen,
     },
     {
-        title: 'Save File (Like Whatsapp)',
+        title: 'Save Files In Device',
         screen: Screens.SaveFileScreen,
     },
 ]
