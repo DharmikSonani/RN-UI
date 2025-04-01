@@ -180,7 +180,37 @@ export const useFilePermissions = () => {
 };
 ```
 
-### 2. [`saveFileHelper.js`](https://github.com/DharmikSonani/RN-UI/blob/main/src/screens/SaveFileScreen/hooks/saveFileHelper.js)
+### 2. [`fileUtils.js`](https://github.com/DharmikSonani/RN-UI/blob/main/src/screens/SaveFileScreen/hooks/fileUtils.js)
+
+```javascript
+const getFileType = (extension) => {
+    if (!extension) return 'unknown';
+
+    const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'heic'];
+    const videoExtensions = ['mp4', 'mov', 'avi', 'mkv', 'wmv', 'flv', 'webm'];
+    const documentExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'csv', 'rtf'];
+
+    if (imageExtensions.includes(extension?.toLowerCase())) {
+        return 'image';
+    } else if (videoExtensions.includes(extension?.toLowerCase())) {
+        return 'video';
+    } else if (documentExtensions.includes(extension?.toLowerCase())) {
+        return 'document';
+    } else {
+        return 'other';
+    }
+};
+
+export const fileSetup = (fileUrl = '', newName) => {
+    const file = fileUrl?.split('/')?.pop()?.split('?')?.[0]?.replaceAll('%20', ' ')?.split('%2F')?.pop()?.split('.');
+    const fileName = newName ? `${newName}.${file[1]}` : `${file[0]}.${file[1]}`;
+    const type = getFileType(file?.pop());
+    return { fileName, type };
+}
+```
+
+
+### 3. [`fileManager.js`](https://github.com/DharmikSonani/RN-UI/blob/main/src/screens/SaveFileScreen/hooks/fileManager.js)
 
 ```javascript
 import RNFS from 'react-native-fs';
@@ -188,87 +218,44 @@ import { Alert, NativeModules, Platform } from 'react-native';
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
 import RNFetchBlob from 'rn-fetch-blob';
 
-const appName = 'RNUI'; // Your Application Name
-const appPackage = 'com.rnui'; // Your Application Package 
-
-const getFileType = (extension) => {
-  if (!extension) return 'unknown';
-
-  const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'heic'];
-  const videoExtensions = ['mp4', 'mov', 'avi', 'mkv', 'wmv', 'flv', 'webm'];
-  const documentExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'csv', 'rtf'];
-
-  if (imageExtensions.includes(extension?.toLowerCase())) {
-    return 'image';
-  } else if (videoExtensions.includes(extension?.toLowerCase())) {
-    return 'video';
-  } else if (documentExtensions.includes(extension?.toLowerCase())) {
-    return 'document';
-  } else {
-    return 'other';
+const refreshStorage = async ({ toFile, fileType }) => {
+  if (Platform.OS === 'android') {
+    const { RNMediaScanner } = NativeModules;
+    RNMediaScanner && RNMediaScanner.scanFile(toFile);
   }
-};
-
-export const fileSetup = (file, newName) => {
-  const fileInfo = file?.split('/')?.pop()?.split('?')?.[0]?.replaceAll('%20', ' ')?.split('%2F')?.pop()?.split('.');
-  const fileName = newName ? `${newName}.${fileInfo[1]}` : `${fileInfo[0]}.${fileInfo[1]}`;
-  const type = getFileType(fileInfo?.pop());
-  return { fileName, type };
-}
-
-export const baseStoragePath = ({ file, subDir = 'Media' }) => Platform.OS == 'android' ? `${RNFS.ExternalStorageDirectoryPath}/Android/media/${appPackage}/${appName}/${subDir}` : `${RNFS.DocumentDirectoryPath}/${file}`;
-
-export const androidFileStorePath = async ({ basePath, file, fileType }) => {
-  let folderPath;
-  if (fileType === 'image') {
-    folderPath = `${basePath}/${appName} Images/`;
-  } else if (fileType === 'video') {
-    folderPath = `${basePath}/${appName} Video/`;
-  } else if (fileType === 'document') {
-    folderPath = `${basePath}/${appName} Documents/`;
-  } else {
-    folderPath = `${basePath}/Other/`;
+  if (Platform.OS === 'ios') {
+    if (fileType === 'image' || fileType === 'video') {
+      await CameraRoll.save(toFile, { type: fileType });
+    } else {
+      RNFetchBlob.ios.previewDocument(toFile);
+    }
   }
-
-  await RNFS.mkdir(folderPath);
-
-  return `${folderPath}${file}`;
 }
 
-// From Url / Server to Media Folder
-
-export const downloadFileAndStore = async ({ fromUrl, toFile, progress = () => { } }) => {
-  const downloadResult = await RNFS.downloadFile({
-    fromUrl: fromUrl,
-    toFile: toFile,
-    background: true,
-    progress: (res) => { progress(((res.bytesWritten / res.contentLength) * 100).toFixed(2)); },
-  }).promise;
-
-  return downloadResult;
-}
-
-export const downloadAndSaveFileInDevice = async ({ fileUrl, newName, progress = () => { } }) => {
+// From Url / Server to Device
+export const downloadAndSaveFileInDevice = async ({ fromUrl, toFile, fileType, progress = () => { } }) => {
   try {
-    const { fileName, type } = fileSetup(fileUrl, newName);
 
-    const basePath = baseStoragePath({ file: fileName, subDir: 'Media' });
-    const toFilePath = Platform.OS == 'ios' ? basePath : await androidFileStorePath({ file: fileName, fileType: type, basePath: basePath });
+    if (!fromUrl) {
+      console.log('Missing : fromUrl required.');
+      return;
+    } else if (!toFile) {
+      console.log('Missing : toFile required.');
+      return;
+    } else if (!fileType) {
+      console.log('Missing : fileType required.');
+      return;
+    }
 
-    const downloadResult = await downloadFileAndStore({ fromUrl: fileUrl, toFile: toFilePath, progress: progress });
+    const downloadResult = await RNFS.downloadFile({
+      fromUrl: fromUrl,
+      toFile: toFile,
+      background: true,
+      progress: (res) => { progress(((res.bytesWritten / res.contentLength) * 100).toFixed(2)); },
+    }).promise;
 
     if (downloadResult.statusCode === 200) {
-      if (Platform.OS === 'android') {
-        const { RNMediaScanner } = NativeModules;
-        RNMediaScanner && RNMediaScanner.scanFile(toFilePath);
-      }
-      if (Platform.OS === 'ios') {
-        if (type === 'image' || type === 'video') {
-          await CameraRoll.save(toFilePath, { type });
-        } else {
-          RNFetchBlob.ios.previewDocument(toFilePath);
-        }
-      }
+      await refreshStorage({ fileType, toFile });
       Alert.alert('Success', 'File downloaded and saved successfully.');
     } else {
       Alert.alert('Failed', 'Download failed with status ' + downloadResult.statusCode);
@@ -279,35 +266,28 @@ export const downloadAndSaveFileInDevice = async ({ fileUrl, newName, progress =
   }
 };
 
-// From Internal Storage to Media Folder
-
-export const moveFileAndStore = async ({ fromUrl, toFile, }) => {
-  const fileExists = await RNFS.exists(toFile);
-  if (fileExists) await RNFS.unlink(toFile);
-  await RNFS.moveFile(fromUrl, toFile).promise;
-}
-
-export const saveFileInDevice = async ({ fileUrl, newName, }) => {
+// Copy and Move the file in device
+export const manageFileInDevice = async ({ fromUrl, toFile, fileType, copy = false }) => {
   try {
-    const { fileName, type } = fileSetup(fileUrl, newName);
 
-    const basePath = baseStoragePath({ file: fileName, subDir: 'Media' });
-    const toFilePath = Platform.OS == 'ios' ? basePath : await androidFileStorePath({ file: fileName, fileType: type, basePath: basePath });
-
-    await moveFileAndStore({ fromUrl: fileUrl, toFile: toFilePath });
-
-    if (Platform.OS === 'android') {
-      const { RNMediaScanner } = NativeModules;
-      RNMediaScanner && RNMediaScanner.scanFile(toFilePath);
+    if (!fromUrl) {
+      console.log('Missing : fromUrl required.');
+      return;
+    } else if (!toFile) {
+      console.log('Missing : toFile required.');
+      return;
+    } else if (!fileType) {
+      console.log('Missing : fileType required.');
+      return;
     }
 
-    if (Platform.OS === 'ios') {
-      if (type === 'image' || type === 'video') {
-        await CameraRoll.save(toFilePath, { type });
-      } else {
-        RNFetchBlob.ios.previewDocument(toFilePath);
-      }
-    }
+    const fileExists = await RNFS.exists(toFile);
+    if (fileExists) await RNFS.unlink(toFile);
+
+    if (copy == true) await RNFS.copyFile(fromUrl, toFile).promise;
+    else await RNFS.moveFile(fromUrl, toFile).promise;
+
+    await refreshStorage({ fileType, toFile });
 
     Alert.alert('Success', 'File saved successfully.');
   } catch (error) {
@@ -317,22 +297,134 @@ export const saveFileInDevice = async ({ fileUrl, newName, }) => {
 };
 ```
 
+### 4. [`useStorageDirectories.js`](https://github.com/DharmikSonani/RN-UI/blob/main/src/screens/SaveFileScreen/hooks/useStorageDirectories.js)
+
+```javascript
+import RNFS from 'react-native-fs';
+import { Platform } from 'react-native';
+import { fileSetup } from './fileUtils';
+
+const appName = 'RNUI'; // Your Application Name
+const appPackage = 'com.rnui'; // Your Application Package 
+
+/**
+ * Get data from the specified main directory.
+ * 
+ * @param {Object} options - Options object.
+ * @param {'/Android/media/appPackage/appName/' | '/Android/data/appPackage/appName/' | '/DCIM/appName/' | 
+* '/Documents/appName/' | '/Download/appName/' | '/Movies/appName/' | 
+* '/Music/appName/' | '/Notifications/appName/' | '/Pictures/appName/' | 
+* '/Podcasts/appName/' | '/Recordings/appName/' | '/Ringtones/appName/' } options.mainDir - The main directory path.
+*/
+
+export const getStorageBasePath = ({
+    mainDir = '/Android/media/appPackage/appName/'
+}) => {
+    const mainDirectory = mainDir.replaceAll('appName', appName).replaceAll('appPackage', appPackage)
+
+    const storagePath = Platform.OS == 'android' ? `${RNFS.ExternalStorageDirectoryPath}${mainDirectory}` : `${RNFS.DocumentDirectoryPath}/`;
+
+    return storagePath;
+}
+
+export const getFileStorePath = async ({ basePath, file, fileType, subDir }) => {
+    let folderPath = basePath;
+
+    if (Platform.OS == 'android') {
+        if (basePath?.includes('/Android/media/') || basePath?.includes('/Android/data/')) {
+            if (fileType === 'image') {
+                folderPath += `${appName} Images/`;
+            } else if (fileType === 'video') {
+                folderPath += `${appName} Video/`;
+            } else if (fileType === 'document') {
+                folderPath += `${appName} Documents/`;
+            } else {
+                folderPath += `Other/`;
+            }
+        }
+    }
+
+    if (subDir && subDir?.trim()) folderPath += `${subDir}/`;
+
+    await RNFS.mkdir(folderPath);
+
+    return `${folderPath}${file}`;
+}
+
+const fileStorage = async ({ url, subDir, newName, storagePath }) => {
+    const { fileName, type } = fileSetup(url, newName);
+
+    const toFilePath = await getFileStorePath({ basePath: storagePath, file: fileName, fileType: type, subDir: subDir })
+
+    return {
+        toFilePath: toFilePath,
+        fileType: type,
+    }
+}
+
+/**
+ * Get data from the specified main directory.
+ * 
+ * @param {Object} options - Options object.
+ * @param {'/Android/media/appPackage/appName/' | '/Android/data/appPackage/appName/' | '/DCIM/appName/' | 
+* '/Documents/appName/' | '/Download/appName/' | '/Movies/appName/' | 
+* '/Music/appName/' | '/Notifications/appName/' | '/Pictures/appName/' | 
+* '/Podcasts/appName/' | '/Recordings/appName/' | '/Ringtones/appName/' } options.mainDir - The main directory path.
+*/
+
+export const useStorageDirectories = ({
+    mainDir = '/Android/media/appPackage/appName/'
+}) => {
+    const storagePath = getStorageBasePath({ mainDir });
+
+    const fileStorageInfo = async ({ url, subDir, newName }) => await fileStorage({ url, subDir, newName, storagePath });
+
+    return { storagePath, getFileStorePath, getStorageBasePath, fileStorageInfo }
+}
+
+export const useAndroidMediaDirectory = () => useStorageDirectories({ mainDir: '/Android/media/appPackage/appName/' });
+export const useAndroidDataDirectory = () => useStorageDirectories({ mainDir: '/Android/data/appPackage/appName/' });
+export const useDCIMDirectory = () => useStorageDirectories({ mainDir: '/DCIM/appName/' });
+export const useDocumentsDirectory = () => useStorageDirectories({ mainDir: '/Documents/appName/' });
+export const useDownloadDirectory = () => useStorageDirectories({ mainDir: '/Download/appName/' });
+export const useMoviesDirectory = () => useStorageDirectories({ mainDir: '/Movies/appName/' });
+export const useMusicDirectory = () => useStorageDirectories({ mainDir: '/Music/appName/' });
+export const useNotificationsDirectory = () => useStorageDirectories({ mainDir: '/Notifications/appName/' });
+export const usePicturesDirectory = () => useStorageDirectories({ mainDir: '/Pictures/appName/' });
+export const usePodcastsDirectory = () => useStorageDirectories({ mainDir: '/Podcasts/appName/' });
+export const useRecordingsDirectory = () => useStorageDirectories({ mainDir: '/Recordings/appName/' });
+export const useRingtonesDirectory = () => useStorageDirectories({ mainDir: '/Ringtones/appName/' });
+```
+
 ---
 
 ## Usage
 
 ```javascript
 import { useFilePermissions } from "./hooks/useFilePermissions";
-import { downloadAndSaveFileInDevice } from "./hooks/saveFileHelper";
+import { downloadAndSaveFileInDevice } from "./hooks/fileManager";
+import { useDownloadDirectory } from "./hooks/useStorageDirectories";
 
 const { requestFilePermission } = useFilePermissions();
+const { fileStorageInfo } = useDownloadDirectory();
 
 const saveFile = async (url) => {
+    if (!url) return;
+    
     const hasPermission = await requestFilePermission();
+
     if (!hasPermission) {
         console.log('Permission Denied', 'Enable storage access to save files.');
         return;
     }
-    await downloadAndSaveFileInDevice({ fileUrl: url, progress: (per)=>{console.log(per)} });
+
+    const { fileType, toFilePath } = await fileStorageInfo({ url: url }); // Required for storing a file
+
+    await downloadAndSaveFileInDevice({
+        fromUrl: url,
+        toFile: toFilePath,
+        fileType: fileType,
+        progress: console.log
+    });
 };
 ```
