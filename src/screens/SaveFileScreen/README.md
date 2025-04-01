@@ -383,7 +383,7 @@ export const useStorageDirectories = ({
 }
 
 export const useAndroidMediaDirectory = () => useStorageDirectories({ mainDir: '/Android/media/appPackage/appName/' }); // Store files like Whatsapp
-export const useAndroidDataDirectory = () => useStorageDirectories({ mainDir: '/Android/data/appPackage/appName/' });  // Store files like Whatsapp
+export const useAndroidDataDirectory = () => useStorageDirectories({ mainDir: '/Android/data/appPackage/appName/' });
 export const useDCIMDirectory = () => useStorageDirectories({ mainDir: '/DCIM/appName/' });
 export const useDocumentsDirectory = () => useStorageDirectories({ mainDir: '/Documents/appName/' });
 export const useDownloadDirectory = () => useStorageDirectories({ mainDir: '/Download/appName/' });
