@@ -1,24 +1,82 @@
-const getFileType = (extension) => {
-    if (!extension) return 'unknown';
+import RNFS from 'react-native-fs';
+import { Alert, NativeModules, Platform } from 'react-native';
+import { CameraRoll } from '@react-native-camera-roll/camera-roll';
+import RNFetchBlob from 'rn-fetch-blob';
 
-    const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'heic'];
-    const videoExtensions = ['mp4', 'mov', 'avi', 'mkv', 'wmv', 'flv', 'webm'];
-    const documentExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'csv', 'rtf'];
-
-    if (imageExtensions.includes(extension?.toLowerCase())) {
-        return 'image';
-    } else if (videoExtensions.includes(extension?.toLowerCase())) {
-        return 'video';
-    } else if (documentExtensions.includes(extension?.toLowerCase())) {
-        return 'document';
+const refreshStorage = async ({ toFile, fileType }) => {
+  if (Platform.OS === 'android') {
+    const { RNMediaScanner } = NativeModules;
+    RNMediaScanner && RNMediaScanner.scanFile(toFile);
+  }
+  if (Platform.OS === 'ios') {
+    if (fileType === 'image' || fileType === 'video') {
+      await CameraRoll.save(toFile, { type: fileType });
     } else {
-        return 'other';
+      RNFetchBlob.ios.previewDocument(toFile);
     }
+  }
+}
+
+// From Url / Server to Device
+export const downloadAndSaveFileInDevice = async ({ fromUrl, toFile, fileType, progress = () => { } }) => {
+  try {
+
+    if (!fromUrl) {
+      console.log('Missing : fromUrl required.');
+      return;
+    } else if (!toFile) {
+      console.log('Missing : toFile required.');
+      return;
+    } else if (!fileType) {
+      console.log('Missing : fileType required.');
+      return;
+    }
+
+    const downloadResult = await RNFS.downloadFile({
+      fromUrl: fromUrl,
+      toFile: toFile,
+      background: true,
+      progress: (res) => { progress(((res.bytesWritten / res.contentLength) * 100).toFixed(2)); },
+    }).promise;
+
+    if (downloadResult.statusCode === 200) {
+      await refreshStorage({ fileType, toFile });
+      Alert.alert('Success', 'File downloaded and saved successfully.');
+    } else {
+      Alert.alert('Failed', 'Download failed with status ' + downloadResult.statusCode);
+    }
+  } catch (error) {
+    console.log('Error saving file:', error);
+    Alert.alert('Error', 'Failed to download and save file.');
+  }
 };
 
-export const fileSetup = (fileUrl = '', newName) => {
-    const file = fileUrl?.split('/')?.pop()?.split('?')?.[0]?.replaceAll('%20', ' ')?.split('%2F')?.pop()?.split('.');
-    const fileName = newName ? `${newName}.${file[1]}` : `${file[0]}.${file[1]}`;
-    const type = getFileType(file?.pop());
-    return { fileName, type };
-}
+// Copy and Move the file in device
+export const manageFileInDevice = async ({ fromUrl, toFile, fileType, copy = false }) => {
+  try {
+
+    if (!fromUrl) {
+      console.log('Missing : fromUrl required.');
+      return;
+    } else if (!toFile) {
+      console.log('Missing : toFile required.');
+      return;
+    } else if (!fileType) {
+      console.log('Missing : fileType required.');
+      return;
+    }
+
+    const fileExists = await RNFS.exists(toFile);
+    if (fileExists) await RNFS.unlink(toFile);
+
+    if (copy == true) await RNFS.copyFile(fromUrl, toFile).promise;
+    else await RNFS.moveFile(fromUrl, toFile).promise;
+
+    await refreshStorage({ fileType, toFile });
+
+    Alert.alert('Success', 'File saved successfully.');
+  } catch (error) {
+    console.log('Error saving file:', error);
+    Alert.alert('Error', 'Failed save file.');
+  }
+};

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Alert } from "react-native";
 import { useFilePermissions } from "./hooks/useFilePermissions";
-import { useStorageManager } from "./hooks/storageManager";
-import { downloadAndSaveFileInDevice } from "./hooks/fileStorage";
+import { downloadAndSaveFileInDevice } from "./hooks/fileManager";
+import { useDownloadDirectory } from "./hooks/useStorageDirectories";
 
 const useScreenHooks = (props) => {
 
@@ -10,7 +10,7 @@ const useScreenHooks = (props) => {
     const navigation = props.navigation;
 
     const { requestFilePermission } = useFilePermissions();
-    const { fileStorageInfo } = useStorageManager({ mainDir: '/Download/appName/' });
+    const { fileStorageInfo } = useDownloadDirectory();
 
     const demoUrls = [
         'https://imgv3.fotor.com/images/slider-image/A-clear-image-of-a-woman-wearing-red-sharpened-by-Fotors-image-sharpener.jpg',
