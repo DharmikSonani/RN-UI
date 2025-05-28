@@ -61,6 +61,10 @@ const data = [
         title: 'Save Files In Device',
         screen: Screens.SaveFileScreen,
     },
+    {
+        title: 'Dynamic App Icon',
+        screen: Screens.DynamicAppIconScreen,
+    },
 ]
 
 data.sort((a, b) => {

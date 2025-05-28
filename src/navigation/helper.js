@@ -28,4 +28,5 @@ export const Screens = {
     BiometricsScreen: 'Biometrics Screen',
     TinderSwipeScreen: 'Tinder Swipe Screen',
     SaveFileScreen: 'Save File Screen',
+    DynamicAppIconScreen: 'Dynamic App Icon Screen',
 }

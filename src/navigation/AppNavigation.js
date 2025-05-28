@@ -30,6 +30,7 @@ import ImageSlider4Screen from '../screens/ImageSliderScreen/screens/ImageSlider
 import BiometricsScreen from '../screens/BiometricsScreen/BiometricsScreen';
 import TinderSwipeScreen from '../screens/TinderSwipeScreen/TinderSwipeScreen';
 import SaveFileScreen from '../screens/SaveFileScreen/SaveFileScreen';
+import DynamicAppIconScreen from '../screens/DynamicAppIconScreen/DynamicAppIconScreen';
 
 const Stack = createStackNavigator();
 
@@ -155,6 +156,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.SaveFileScreen}
                 component={SaveFileScreen}
+            />
+            <Stack.Screen
+                name={Screens.DynamicAppIconScreen}
+                component={DynamicAppIconScreen}
             />
         </Stack.Navigator>
     )
