@@ -65,6 +65,10 @@ const data = [
         title: 'Dynamic App Icon',
         screen: Screens.DynamicAppIconScreen,
     },
+    {
+        title: 'Stripe Payment Demo',
+        screen: Screens.StripePaymentScreen,
+    },
 ]
 
 data.sort((a, b) => {

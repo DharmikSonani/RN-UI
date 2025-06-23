@@ -31,6 +31,7 @@ import BiometricsScreen from '../screens/BiometricsScreen/BiometricsScreen';
 import TinderSwipeScreen from '../screens/TinderSwipeScreen/TinderSwipeScreen';
 import SaveFileScreen from '../screens/SaveFileScreen/SaveFileScreen';
 import DynamicAppIconScreen from '../screens/DynamicAppIconScreen/DynamicAppIconScreen';
+import StripePaymentScreen from '../screens/StripePaymentScreen/StripePaymentScreen';
 
 const Stack = createStackNavigator();
 
@@ -160,6 +161,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.DynamicAppIconScreen}
                 component={DynamicAppIconScreen}
+            />
+            <Stack.Screen
+                name={Screens.StripePaymentScreen}
+                component={StripePaymentScreen}
             />
         </Stack.Navigator>
     )

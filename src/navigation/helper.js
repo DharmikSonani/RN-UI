@@ -29,4 +29,5 @@ export const Screens = {
     TinderSwipeScreen: 'Tinder Swipe Screen',
     SaveFileScreen: 'Save File Screen',
     DynamicAppIconScreen: 'Dynamic App Icon Screen',
+    StripePaymentScreen: 'Stripe Payment Screen',
 }
