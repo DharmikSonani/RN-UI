@@ -3,7 +3,7 @@ import { handleURLCallback, useStripe } from "@stripe/stripe-react-native";
 import { useCallback, useEffect, useState } from "react";
 import { Alert, Linking } from "react-native";
 
-const API_URL = `https://formally-valid-mite.ngrok-free.app/stripe`
+const API_URL = `https://rnui-server.vercel.app/stripe`
 
 const useScreenHooks = () => {
 
@@ -91,12 +91,18 @@ const useScreenHooks = () => {
                 customerId: customer,
                 customerEphemeralKeySecret: ephemeralKey,
                 paymentIntentClientSecret: paymentIntent,
-                allowsDelayedPaymentMethods: true,
+                allowsDelayedPaymentMethods: false,
+                paymentMethodOrder: ['card'],
                 defaultBillingDetails: {
-                    name: 'Dharmik Sonani',
-                }
+                    name: 'MDS',
+                },
+                // googlePay: {
+                //     merchantCountryCode: 'US',
+                //     currencyCode: 'USD',
+                //     testEnv: true,
+                // },
+                applePay: false,
             });
-            console.log(error);
         } catch (error) {
             console.log(error);
         }

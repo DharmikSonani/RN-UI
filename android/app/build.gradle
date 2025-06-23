@@ -125,4 +125,5 @@ dependencies {
     }
 
     implementation project(':react-native-fs')
+    implementation("com.google.android.gms:play-services-wallet:19.4.0")
 }
