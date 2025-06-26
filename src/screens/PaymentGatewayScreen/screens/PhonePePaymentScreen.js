@@ -10,8 +10,8 @@ const PhonePePaymentScreen = () => {
     const merchantId = `PRODTEST`;
 
     useEffect(() => {
-        const flowId = `FLOW_${new Date().getTime()}`;
-        PhonePePaymentSDK.init('SANDBOX', merchantId, flowId, true).then(console.log).catch(console.log)
+        const flowId = `FLOW_TEST`;
+        PhonePePaymentSDK.init('SANDBOX', merchantId, flowId, false).then(console.log).catch(console.log)
     }, [merchantId])
 
     const getPhonePeOAuthToken = async () => {
