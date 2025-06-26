@@ -1,22 +1,17 @@
-import { useNavigation } from "@react-navigation/native";
-import { handleURLCallback, useStripe } from "@stripe/stripe-react-native";
-import { useCallback, useEffect, useState } from "react";
-import { Alert, Linking } from "react-native";
+import { ActivityIndicator, Alert, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useCallback, useEffect, useState } from 'react'
+import { handleURLCallback, StripeProvider, useStripe } from '@stripe/stripe-react-native'
 
 const API_URL = `https://rnui-server.vercel.app/stripe`
 
-const useScreenHooks = () => {
+const STRIPE_PUBLISHABLE_KEY = 'pk_test_51RdFPWFJNTrN01rKRf9iBf2eRhRQ1BMYFqUk9L2kl4ZupaVXg2DqLvyqwmzfwyLmbIz6aFRcV8rAz9XhUQV1BmU000PV3uCOvG';
 
-    // variables
-    const navigation = useNavigation();
+const StripePaymentScreen = () => {
+
     const { initPaymentSheet, presentPaymentSheet } = useStripe();
 
-    // useStates
     const [loading, setLoading] = useState(false);
 
-    // useEffects
-
-    //  ---------- For iOS only start ----------
     useEffect(() => {
         const getUrlAsync = async () => {
             const initialUrl = await Linking.getInitialURL();
@@ -96,11 +91,6 @@ const useScreenHooks = () => {
                 defaultBillingDetails: {
                     name: 'MDS',
                 },
-                // googlePay: {
-                //     merchantCountryCode: 'US',
-                //     currencyCode: 'USD',
-                //     testEnv: true,
-                // },
                 applePay: false,
             });
         } catch (error) {
@@ -120,11 +110,49 @@ const useScreenHooks = () => {
         setLoading(false);
     }, [])
 
-    return {
-        navigation,
-        loading,
-        handleButtonPress
-    };
+    return (
+        <StripeProvider
+            publishableKey={STRIPE_PUBLISHABLE_KEY}
+        >
+            <View style={styles.Container}>
+                <TouchableOpacity style={styles.Button} onPress={handleButtonPress} disabled={loading}>
+                    {
+                        loading ?
+                            <>
+                                <Text style={styles.ButtonText}>Processing...</Text>
+                                <ActivityIndicator size={'small'} color={'#FFF'} />
+                            </>
+                            :
+                            <Text style={styles.ButtonText}>Pay Now</Text>
+                    }
+                </TouchableOpacity>
+            </View>
+        </StripeProvider>
+    )
 }
 
-export default useScreenHooks
+export default StripePaymentScreen
+
+export const styles = StyleSheet.create({
+    Container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(255,255,255,1)',
+    },
+    Button: {
+        width: '50%',
+        backgroundColor: '#000',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+        height: 60,
+        flexDirection: 'row',
+        gap: 10,
+    },
+    ButtonText: {
+        color: '#FFF',
+        fontSize: 15,
+        fontWeight: '600',
+    },
+});

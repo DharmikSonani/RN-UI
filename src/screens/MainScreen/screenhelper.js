@@ -66,8 +66,8 @@ const data = [
         screen: Screens.DynamicAppIconScreen,
     },
     {
-        title: 'Stripe Payment Demo',
-        screen: Screens.StripePaymentScreen,
+        title: 'Payment Gateways',
+        screen: Screens.PaymentGatewayScreen,
     },
 ]
 

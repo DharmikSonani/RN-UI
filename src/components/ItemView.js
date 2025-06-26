@@ -1,10 +1,11 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React, { memo } from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 const ItemView = ({
     data,
-    navigation
 }) => {
+    const navigation = useNavigation();
     return (
         <TouchableOpacity
             style={styles.Container}
