@@ -1257,6 +1257,27 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - react-native-app-icon-changer (1.3.0):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - react-native-biometrics (3.0.1):
     - React-Core
   - react-native-cameraroll (7.10.0):
@@ -1877,6 +1898,7 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
+  - react-native-app-icon-changer (from `../node_modules/react-native-app-icon-changer`)
   - react-native-biometrics (from `../node_modules/react-native-biometrics`)
   - "react-native-cameraroll (from `../node_modules/@react-native-camera-roll/camera-roll`)"
   - react-native-change-icon (from `../node_modules/react-native-change-icon`)
@@ -2010,6 +2032,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   React-microtasksnativemodule:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
+  react-native-app-icon-changer:
+    :path: "../node_modules/react-native-app-icon-changer"
   react-native-biometrics:
     :path: "../node_modules/react-native-biometrics"
   react-native-cameraroll:
@@ -2134,6 +2158,7 @@ SPEC CHECKSUMS:
   React-logger: ae95f0effa7e1791bd6f7283caddca323d4fbc1e
   React-Mapbuffer: 7eb5d69e1154e7743487ef0c8d7261e5b59afb32
   React-microtasksnativemodule: 01dd998649ff5f8814846b7eee84c4d57f5d3671
+  react-native-app-icon-changer: 22e75b16ac9e35857e592adb1d91913da30cf507
   react-native-biometrics: 43ed5b828646a7862dbc7945556446be00798e7d
   react-native-cameraroll: 0a557f3f09413e20172df73bd31bfb5e6b3b30f4
   react-native-change-icon: 3725cab532f5f002bb156032b7a5e5b202b5c482
