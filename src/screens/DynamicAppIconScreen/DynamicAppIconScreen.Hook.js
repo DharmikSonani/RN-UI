@@ -1,27 +1,24 @@
-import { changeIcon, getIcon } from 'react-native-change-icon';
-import { getActiveIcon, setIcon, } from 'react-native-app-icon-changer';
-import { Platform } from 'react-native';
+import { useDefaultIcon, useIconA, useIconB, useIconC } from './hooks/useAppIcons';
 
-const useScreenHooks = (props) => {
+const useScreenHooks = () => {
 
     // variables
-    const navigation = props.navigation;
     const data = [
         {
             display: require('./assets/i1.png'),
-            iconName: 'Default',
+            icon: useDefaultIcon,
         },
         {
             display: require('./assets/i2.png'),
-            iconName: 'IconA',
+            icon: useIconA,
         },
         {
             display: require('./assets/i3.png'),
-            iconName: 'IconB',
+            icon: useIconB,
         },
         {
             display: require('./assets/i4.png'),
-            iconName: 'IconC',
+            icon: useIconC,
         },
     ]
 
@@ -33,26 +30,10 @@ const useScreenHooks = (props) => {
 
 
     // methods
-    const handleIconSelection = async (icon) => {
-        if (Platform.OS === 'android') try {
-            const preIcon = await getIcon();
-            if (preIcon !== icon?.iconName) changeIcon(icon?.iconName);
-        } catch (error) {
-            console.log(error);
-        }
-        if (Platform.OS === 'ios') try {
-            const preIcon = await getActiveIcon();
-            if (preIcon !== icon?.iconName) setIcon(icon?.iconName);
-        } catch (error) {
-            console.log(error);
-        }
-    }
+
 
     return {
-        navigation,
-
         data,
-        handleIconSelection,
     };
 }
 

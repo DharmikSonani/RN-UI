@@ -11,6 +11,7 @@ import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.soloader.OpenSourceMergedSoMapping
 import com.facebook.soloader.SoLoader
+import com.rnui.appicon.AppIconPackage // Import Package for AppIconModule (Required)
 
 class MainApplication : Application(), ReactApplication {
 
@@ -18,9 +19,10 @@ class MainApplication : Application(), ReactApplication {
       object : DefaultReactNativeHost(this) {
         override fun getPackages(): List<ReactPackage> =
             PackageList(this).packages.apply {
+              add(AppIconPackage()) // Required setup for connecting AppIconModule with React Native (Required)
+              add(RNMediaScannerPackage()) // Require For Save the media in device and display in Gallery
               // Packages that cannot be autolinked yet can be added manually here, for example:
               // add(MyReactNativePackage())
-              add(RNMediaScannerPackage()) // Require For Save the media in device and display in Gallery
             }
 
         override fun getJSMainModuleName(): String = "index"

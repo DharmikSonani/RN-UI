@@ -1,15 +1,14 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 import React, { memo } from 'react'
 import FastImage from 'react-native-fast-image'
 
 const IconCard = ({
     data,
-    onSelect = () => { },
 }) => {
     return (
         <TouchableOpacity
             style={styles.Button}
-            onPress={() => { onSelect(data) }}
+            onPress={() => { data?.icon() }}
         >
             <FastImage
                 source={data?.display}

@@ -4,23 +4,17 @@ import useScreenHooks from './DynamicAppIconScreen.Hook'
 import { styles } from './styles'
 import IconCard from './components/IconCard'
 
-const DynamicAppIconScreen = (props) => {
+const DynamicAppIconScreen = () => {
 
     const {
         data,
-        handleIconSelection,
-    } = useScreenHooks(props)
+    } = useScreenHooks()
 
     return (
         <FlatList
             data={data}
             showsVerticalScrollIndicator={false}
-            renderItem={({ item }) =>
-                <IconCard
-                    data={item}
-                    onSelect={handleIconSelection}
-                />
-            }
+            renderItem={({ item }) => <IconCard data={item} />}
             keyExtractor={(item, index) => index.toString()}
             style={styles.Container}
             numColumns={2}
