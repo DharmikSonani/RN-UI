@@ -69,6 +69,10 @@ const data = [
         title: 'Payment Gateways',
         screen: Screens.PaymentGatewayScreen,
     },
+    {
+        title: 'Image Dimensions Grid',
+        screen: Screens.ImageDimensionsGridScreen,
+    },
 ]
 
 data.sort((a, b) => {

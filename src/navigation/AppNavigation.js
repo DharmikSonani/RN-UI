@@ -34,6 +34,7 @@ import DynamicAppIconScreen from '../screens/DynamicAppIconScreen/DynamicAppIcon
 import PaymentGatewayScreen from '../screens/PaymentGatewayScreen/PaymentGatewayScreen';
 import StripePaymentScreen from '../screens/PaymentGatewayScreen/screens/StripePaymentScreen';
 import PhonePePaymentScreen from '../screens/PaymentGatewayScreen/screens/PhonePePaymentScreen';
+import ImageDimensionsGridScreen from '../screens/ImageDimensionsGridScreen/ImageDimensionsGridScreen';
 
 const Stack = createStackNavigator();
 
@@ -175,6 +176,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.PhonePePaymentScreen}
                 component={PhonePePaymentScreen}
+            />
+            <Stack.Screen
+                name={Screens.ImageDimensionsGridScreen}
+                component={ImageDimensionsGridScreen}
             />
         </Stack.Navigator>
     )
