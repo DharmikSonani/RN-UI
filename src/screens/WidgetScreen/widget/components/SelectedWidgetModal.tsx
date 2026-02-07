@@ -1,16 +1,16 @@
-import { Image, Modal, StyleSheet, TouchableOpacity, View } from 'react-native';
-import React, { memo, useCallback } from 'react';
+import {Image, Modal, StyleSheet, TouchableOpacity, View} from 'react-native';
+import React, {memo, useCallback} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import { useWidgetContext } from '../context/WidgetContext';
+import {useWidgetContext} from '../context/WidgetContext';
 import DraggableWidget from './DraggableWidget';
-import { BlurView } from '@react-native-community/blur';
-import { Widget } from '../utils/types';
+import {BlurView} from '@react-native-community/blur';
+import {Widget} from '../utils/types';
 
 const SelectedWidgetModal = () => {
-  const { state, dispatch } = useWidgetContext();
+  const {state, dispatch} = useWidgetContext();
 
   const handleDismiss = useCallback(() => {
-    dispatch({ type: 'SET_FOCUSED_WIDGET', payload: null });
+    dispatch({type: 'SET_FOCUSED_WIDGET', payload: null});
   }, [dispatch]);
 
   return (
@@ -19,16 +19,14 @@ const SelectedWidgetModal = () => {
       transparent={true}
       animationType="fade"
       statusBarTranslucent
-      onRequestClose={handleDismiss}
-    >
+      onRequestClose={handleDismiss}>
       <View style={StyleSheet.absoluteFill}>
         {/* Glassmorphism Background: Blur + Gradient Tint */}
         <BlurView
           style={StyleSheet.absoluteFill}
           blurType="light"
           blurAmount={25}
-          reducedTransparencyFallbackColor="white"
-        >
+          reducedTransparencyFallbackColor="white">
           <LinearGradient
             colors={['rgba(255,255,255,0.3)', 'rgba(255,255,255,0.2)']}
             style={StyleSheet.absoluteFill}
@@ -63,19 +61,18 @@ const SelectedWidgetModal = () => {
               <View
                 key={`${original.id}_container`}
                 style={StyleSheet.absoluteFill}
-                pointerEvents="box-none"
-              >
+                pointerEvents="box-none">
                 {/* The Widget */}
                 <DraggableWidget
                   key={`${original.id}_overlay`}
                   data={overlayData}
                   dispatch={dispatch}
                   isOverlay={true}
-                // scrollY={null} - Removed as optional prop
+                  // scrollY={null} - Removed as optional prop
                 >
                   <Image
-                    source={{ uri: original?.data }}
-                    style={{ width: '100%', height: '100%' }}
+                    source={{uri: original?.data}}
+                    style={{width: '100%', height: '100%'}}
                     resizeMode="cover"
                   />
                 </DraggableWidget>
