@@ -1,7 +1,7 @@
 import RNFS from 'react-native-fs';
 import { Alert, NativeModules, Platform } from 'react-native';
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
-import RNFetchBlob from 'rn-fetch-blob';
+import ReactNativeBlobUtil from 'react-native-blob-util';
 
 const refreshStorage = async ({ toFile, fileType }) => {
   if (Platform.OS === 'android') {
@@ -12,7 +12,7 @@ const refreshStorage = async ({ toFile, fileType }) => {
     if (fileType === 'image' || fileType === 'video') {
       await CameraRoll.save(toFile, { type: fileType });
     } else {
-      RNFetchBlob.ios.previewDocument(toFile);
+      ReactNativeBlobUtil.ios.previewDocument(toFile);
     }
   }
 }

@@ -23,7 +23,7 @@ class AppIconModule: NSObject, RCTBridgeModule{
         if let error = error {
           rejecter("change_failed", "Failed to change icon", error)
         } else {
-          resolver("Icon changed successfully \(newIconName)")
+          resolver("Icon changed successfully \(newIconName ?? "default")")
         }
       }
     }
@@ -31,13 +31,15 @@ class AppIconModule: NSObject, RCTBridgeModule{
 
   @objc
   func getAppIcon(_ resolver: @escaping RCTPromiseResolveBlock, rejecter: @escaping RCTPromiseRejectBlock) {
-    guard UIApplication.shared.supportsAlternateIcons else {
-      rejecter("not_supported", "Alternate icons not supported on this device", nil)
-      return
-    }
+    DispatchQueue.main.async {
+      guard UIApplication.shared.supportsAlternateIcons else {
+        rejecter("not_supported", "Alternate icons not supported on this device", nil)
+        return
+      }
 
-    let currentName = UIApplication.shared.alternateIconName ?? "default"
-    resolver(currentName)
+      let currentName = UIApplication.shared.alternateIconName ?? "default"
+      resolver(currentName)
+    }
   }
   
   @objc

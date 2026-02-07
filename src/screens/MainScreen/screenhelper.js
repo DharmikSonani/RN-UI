@@ -65,13 +65,17 @@ const data = [
         title: 'Dynamic App Icon',
         screen: Screens.DynamicAppIconScreen,
     },
-    {
-        title: 'Payment Gateways',
-        screen: Screens.PaymentGatewayScreen,
-    },
+    // {
+    //     title: 'Payment Gateways',
+    //     screen: Screens.PaymentGatewayScreen,
+    // },
     {
         title: 'Image Dimensions Grid',
         screen: Screens.ImageDimensionsGridScreen,
+    },
+    {
+        title: 'Widgets',
+        screen: Screens.WidgetScreen,
     },
 ]
 

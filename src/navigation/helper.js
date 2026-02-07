@@ -33,4 +33,5 @@ export const Screens = {
     StripePaymentScreen: 'Stripe Payment Screen',
     PhonePePaymentScreen: 'Phone Pe Payment Screen',
     ImageDimensionsGridScreen: 'Image Dimensions Grid Screen',
+    WidgetScreen: 'Widget Screen',
 }

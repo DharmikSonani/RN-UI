@@ -27,7 +27,7 @@ class AppIconModule(
 
     @ReactMethod
     fun getAppIcon(promise: Promise) {
-        val activity = currentActivity
+        val activity = context.currentActivity
         if (activity == null) {
             promise.resolve("ANDROID:ACTIVITY_NOT_FOUND")
             return
@@ -46,7 +46,7 @@ class AppIconModule(
 
     @ReactMethod
     fun changeAppIcon(iconName: String?, promise: Promise) {
-        val activity = currentActivity
+        val activity = context.currentActivity
         if (activity == null) {
             promise.resolve("ANDROID:ACTIVITY_NOT_FOUND")
             return

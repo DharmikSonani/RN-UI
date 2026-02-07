@@ -35,6 +35,7 @@ import PaymentGatewayScreen from '../screens/PaymentGatewayScreen/PaymentGateway
 import StripePaymentScreen from '../screens/PaymentGatewayScreen/screens/StripePaymentScreen';
 import PhonePePaymentScreen from '../screens/PaymentGatewayScreen/screens/PhonePePaymentScreen';
 import ImageDimensionsGridScreen from '../screens/ImageDimensionsGridScreen/ImageDimensionsGridScreen';
+import WidgetScreen from '../screens/WidgetScreen/WidgetScreen';
 
 const Stack = createStackNavigator();
 
@@ -180,6 +181,10 @@ const AppNavigation = () => {
             <Stack.Screen
                 name={Screens.ImageDimensionsGridScreen}
                 component={ImageDimensionsGridScreen}
+            />
+            <Stack.Screen
+                name={Screens.WidgetScreen}
+                component={WidgetScreen}
             />
         </Stack.Navigator>
     )

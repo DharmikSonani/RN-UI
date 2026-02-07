@@ -7,104 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00598E262E1FA27F00364B9A /* AppIconModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00598E252E1FA27F00364B9A /* AppIconModule.swift */; };
-		00598E282E1FA28C00364B9A /* AppIconModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 00598E272E1FA28C00364B9A /* AppIconModule.m */; };
-		00E356F31AD99517003FC87E /* RNUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNUITests.m */; };
-		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		68F4DD05216085FE335535D2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		78B0D3E0B01E255DE7C90EDF /* libPods-RNUI-RNUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 796B89AFC091588CBDFEEEF6 /* libPods-RNUI-RNUITests.a */; };
+		4F956C5C4257FB93EF24C020 /* AppIconModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC038090389FA3186B4D3E5 /* AppIconModule.swift */; };
+		58979DA6CB41D035D9A14478 /* AppIconModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4149545A8061BB7D66605F9B /* AppIconModule.m */; };
+		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8E0CAA9C969AB05E04A13BFE /* libPods-RNUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5CA7F797A9A33751D125846 /* libPods-RNUI.a */; };
+		B4655621E16915BE0B1C2658 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		E9DFA64A18ED1354E15ECE4D /* libPods-RNUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E74EDA56C4D5F0CC875F1DE1 /* libPods-RNUI.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = RNUI;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		00598E242E1FA27E00364B9A /* RNUI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNUI-Bridging-Header.h"; sourceTree = "<group>"; };
-		00598E252E1FA27F00364B9A /* AppIconModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconModule.swift; sourceTree = "<group>"; };
-		00598E272E1FA28C00364B9A /* AppIconModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppIconModule.m; sourceTree = "<group>"; };
-		009243B02D21CAF000E816E8 /* RNUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = RNUI.entitlements; path = RNUI/RNUI.entitlements; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* RNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* RNUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNUITests.m; sourceTree = "<group>"; };
+		1390B20159987C0DC16E8DA4 /* RNUI-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RNUI-Bridging-Header.h"; path = "RNUI/RNUI-Bridging-Header.h"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* RNUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RNUI/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = RNUI/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RNUI/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RNUI/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RNUI/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = RNUI/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		4A816AD3AC39B4A41518D88F /* Pods-RNUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI.release.xcconfig"; path = "Target Support Files/Pods-RNUI/Pods-RNUI.release.xcconfig"; sourceTree = "<group>"; };
-		5585160E7A434BF1D5F492C5 /* Pods-RNUI-RNUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI-RNUITests.release.xcconfig"; path = "Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests.release.xcconfig"; sourceTree = "<group>"; };
-		55E087E83AF475E980F4502D /* Pods-RNUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI.debug.xcconfig"; path = "Target Support Files/Pods-RNUI/Pods-RNUI.debug.xcconfig"; sourceTree = "<group>"; };
-		796B89AFC091588CBDFEEEF6 /* libPods-RNUI-RNUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNUI-RNUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4149545A8061BB7D66605F9B /* AppIconModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AppIconModule.m; path = RNUI/AppIconModule.m; sourceTree = "<group>"; };
+		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = RNUI/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNUI/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		82B03FDC53D04DB431E59E0A /* Pods-RNUI-RNUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI-RNUITests.debug.xcconfig"; path = "Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BBC038090389FA3186B4D3E5 /* AppIconModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppIconModule.swift; path = RNUI/AppIconModule.swift; sourceTree = "<group>"; };
+		E74EDA56C4D5F0CC875F1DE1 /* libPods-RNUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECD74C34E6D0F2F317963B72 /* Pods-RNUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI.debug.xcconfig"; path = "Target Support Files/Pods-RNUI/Pods-RNUI.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F5CA7F797A9A33751D125846 /* libPods-RNUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC264CBA0EBA09ED7F0366E /* Pods-RNUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUI.release.xcconfig"; path = "Target Support Files/Pods-RNUI/Pods-RNUI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		00E356EB1AD99517003FC87E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				78B0D3E0B01E255DE7C90EDF /* libPods-RNUI-RNUITests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E0CAA9C969AB05E04A13BFE /* libPods-RNUI.a in Frameworks */,
+				E9DFA64A18ED1354E15ECE4D /* libPods-RNUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* RNUITests */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F21AD99517003FC87E /* RNUITests.m */,
-				00E356F01AD99517003FC87E /* Supporting Files */,
-			);
-			path = RNUITests;
-			sourceTree = "<group>";
-		};
-		00E356F01AD99517003FC87E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F11AD99517003FC87E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* RNUI */ = {
 			isa = PBXGroup;
 			children = (
-				009243B02D21CAF000E816E8 /* RNUI.entitlements */,
-				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
-				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				761780EC2CA45674006654EE /* AppDelegate.swift */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
-				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
-				00598E252E1FA27F00364B9A /* AppIconModule.swift */,
-				00598E242E1FA27E00364B9A /* RNUI-Bridging-Header.h */,
-				00598E272E1FA28C00364B9A /* AppIconModule.m */,
+				BBC038090389FA3186B4D3E5 /* AppIconModule.swift */,
+				4149545A8061BB7D66605F9B /* AppIconModule.m */,
+				1390B20159987C0DC16E8DA4 /* RNUI-Bridging-Header.h */,
 			);
 			name = RNUI;
 			sourceTree = "<group>";
@@ -113,8 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				F5CA7F797A9A33751D125846 /* libPods-RNUI.a */,
-				796B89AFC091588CBDFEEEF6 /* libPods-RNUI-RNUITests.a */,
+				E74EDA56C4D5F0CC875F1DE1 /* libPods-RNUI.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,7 +80,6 @@
 			children = (
 				13B07FAE1A68108700A75B9A /* RNUI */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* RNUITests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -145,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* RNUI.app */,
-				00E356EE1AD99517003FC87E /* RNUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,49 +100,37 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				55E087E83AF475E980F4502D /* Pods-RNUI.debug.xcconfig */,
-				4A816AD3AC39B4A41518D88F /* Pods-RNUI.release.xcconfig */,
-				82B03FDC53D04DB431E59E0A /* Pods-RNUI-RNUITests.debug.xcconfig */,
-				5585160E7A434BF1D5F492C5 /* Pods-RNUI-RNUITests.release.xcconfig */,
+				ECD74C34E6D0F2F317963B72 /* Pods-RNUI.debug.xcconfig */,
+				FFC264CBA0EBA09ED7F0366E /* Pods-RNUI.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* RNUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RNUITests" */;
-			buildPhases = (
-				C50DFCF3D3F6E01E591B1105 /* [CP] Check Pods Manifest.lock */,
-				00E356EA1AD99517003FC87E /* Sources */,
-				00E356EB1AD99517003FC87E /* Frameworks */,
-				00E356EC1AD99517003FC87E /* Resources */,
-				54B781DE7F6E0E7DC48E6ED0 /* [CP] Embed Pods Frameworks */,
-				0ED9E50588E9DB61EB7FC88E /* [CP] Copy Pods Resources */,
+/* Begin PBXHeadersBuildPhase section */
+		3738FF498CD041BA88D89600 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
-			buildRules = (
-			);
-			dependencies = (
-				00E356F51AD99517003FC87E /* PBXTargetDependency */,
-			);
-			name = RNUITests;
-			productName = RNUITests;
-			productReference = 00E356EE1AD99517003FC87E /* RNUITests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
 		13B07F861A680F5B00A75B9A /* RNUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RNUI" */;
 			buildPhases = (
-				E2EC4EFF55F34974DFAB4AD8 /* [CP] Check Pods Manifest.lock */,
+				4F08BB46EB7E9FEDB88C7E54 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				5BE14639653573DB9F7CC860 /* [CP] Embed Pods Frameworks */,
-				AC68DEBD93751864497BF890 /* [CP] Copy Pods Resources */,
+				3738FF498CD041BA88D89600 /* Headers */,
+				631A5856217E145B6FA4F32F /* [CP] Embed Pods Frameworks */,
+				7B9B423BB9CF50EF1CB3F3F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,12 +149,8 @@
 			attributes = {
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
-					00E356ED1AD99517003FC87E = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 13B07F861A680F5B00A75B9A;
-					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1620;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -237,26 +168,18 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* RNUI */,
-				00E356ED1AD99517003FC87E /* RNUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		00E356EC1AD99517003FC87E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F8E1A680F5B00A75B9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				68F4DD05216085FE335535D2 /* PrivacyInfo.xcprivacy in Resources */,
+				B4655621E16915BE0B1C2658 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,99 +200,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"\\\"$WITH_ENVIRONMENT\\\" \\\"$REACT_NATIVE_XCODE\\\"\"\n";
 		};
-		0ED9E50588E9DB61EB7FC88E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		54B781DE7F6E0E7DC48E6ED0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI-RNUITests/Pods-RNUI-RNUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5BE14639653573DB9F7CC860 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AC68DEBD93751864497BF890 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C50DFCF3D3F6E01E591B1105 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNUI-RNUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E2EC4EFF55F34974DFAB4AD8 /* [CP] Check Pods Manifest.lock */ = {
+		4F08BB46EB7E9FEDB88C7E54 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -391,98 +224,63 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		631A5856217E145B6FA4F32F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B9B423BB9CF50EF1CB3F3F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNUI/Pods-RNUI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		00E356EA1AD99517003FC87E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00E356F31AD99517003FC87E /* RNUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F871A680F5B00A75B9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
-				00598E262E1FA27F00364B9A /* AppIconModule.swift in Sources */,
-				00598E282E1FA28C00364B9A /* AppIconModule.m in Sources */,
-				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
+				4F956C5C4257FB93EF24C020 /* AppIconModule.swift in Sources */,
+				58979DA6CB41D035D9A14478 /* AppIconModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* RNUI */;
-			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		00E356F61AD99517003FC87E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82B03FDC53D04DB431E59E0A /* Pods-RNUI-RNUITests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RNUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-					"$(inherited)",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RNUI.app/RNUI";
-			};
-			name = Debug;
-		};
-		00E356F71AD99517003FC87E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5585160E7A434BF1D5F492C5 /* Pods-RNUI-RNUITests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = RNUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-					"$(inherited)",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RNUI.app/RNUI";
-			};
-			name = Release;
-		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55E087E83AF475E980F4502D /* Pods-RNUI.debug.xcconfig */;
+			baseConfigurationReference = ECD74C34E6D0F2F317963B72 /* Pods-RNUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Default;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = RNUI/RNUI.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RNUI/Info.plist;
@@ -503,7 +301,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "RNUI-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RNUI/RNUI-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -513,12 +311,11 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A816AD3AC39B4A41518D88F /* Pods-RNUI.release.xcconfig */;
+			baseConfigurationReference = FFC264CBA0EBA09ED7F0366E /* Pods-RNUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Default;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = RNUI/RNUI.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = RNUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -538,7 +335,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "RNUI-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RNUI/RNUI-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -606,6 +403,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -613,10 +411,6 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
@@ -678,6 +472,7 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -685,10 +480,6 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
@@ -700,15 +491,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RNUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				00E356F61AD99517003FC87E /* Debug */,
-				00E356F71AD99517003FC87E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RNUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

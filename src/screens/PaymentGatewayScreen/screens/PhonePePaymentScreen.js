@@ -1,6 +1,6 @@
 import { ActivityIndicator, Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import PhonePePaymentSDK from 'react-native-phonepe-pg'
+// import PhonePePaymentSDK from 'react-native-phonepe-pg'
 
 const PhonePePaymentScreen = () => {
 
@@ -11,7 +11,7 @@ const PhonePePaymentScreen = () => {
 
     useEffect(() => {
         const flowId = `FLOW_TEST`;
-        PhonePePaymentSDK.init('SANDBOX', merchantId, flowId, false).then(console.log).catch(console.log)
+        // PhonePePaymentSDK.init('SANDBOX', merchantId, flowId, false).then(console.log).catch(console.log)
     }, [merchantId])
 
     const getPhonePeOAuthToken = async () => {
@@ -80,15 +80,16 @@ const PhonePePaymentScreen = () => {
             requestBody['paymentMode'] = {
                 type: 'PAY_PAGE'
             };
-            PhonePePaymentSDK.startTransaction(JSON.stringify(requestBody), 'iOSintentIntegration')
-                .then((res) => {
-                    if (res?.status == "SUCCESS") {
-                        Alert.alert('Payment', `Payment successfully done.`)
-                    } else {
-                        Alert.alert('Payment', res?.error?.toString() ?? 'Payment Canceled')
-                    }
-                })
-                .catch(console.log);
+            Alert.alert('PhonePe Disabled', 'PhonePe integration is temporarily disabled due to repository issues.');
+            // PhonePePaymentSDK.startTransaction(JSON.stringify(requestBody), 'iOSintentIntegration')
+            //     .then((res) => {
+            //         if (res?.status == "SUCCESS") {
+            //             Alert.alert('Payment', `Payment successfully done.`)
+            //         } else {
+            //             Alert.alert('Payment', res?.error?.toString() ?? 'Payment Canceled')
+            //         }
+            //     })
+            //     .catch(console.log);
         } catch (error) {
             console.log(error);
         } finally {
