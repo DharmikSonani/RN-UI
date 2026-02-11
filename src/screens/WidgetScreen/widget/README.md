@@ -1366,9 +1366,18 @@ import {
 } from './measure';
 import { Widget } from './types';
 
+const getSpan = (size: number, baseSize: number) => {
+  if (size <= 0 || baseSize <= 0) return 1;
+
+  const span = Math.ceil((size - 20) / baseSize);
+
+  if (span < 1) return 1;
+  return span > COLUMNS ? COLUMNS : span;
+};
+
 export const getGridSizeFromDimensions = (width: number, height: number) => {
-  const colSpan = width > COLUMN_WIDTH + 20 ? 2 : 1;
-  const rowSpan = height > ROW_HEIGHT + 20 ? 2 : 1;
+  const colSpan = getSpan(width, COLUMN_WIDTH);
+  const rowSpan = getSpan(height, ROW_HEIGHT);
   return { colSpan, rowSpan };
 };
 
